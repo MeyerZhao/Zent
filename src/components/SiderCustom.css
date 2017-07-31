@@ -1,0 +1,41 @@
+.logo{
+    position:relative;
+    border-radius: 6px;
+    margin: 16px;
+    height: 40px;
+} 
+.avatar{
+    position:absolute;
+    top:0;
+    left:0;
+    background: url("https://img.yzcdn.cn//upload_files/2017/05/22/FkwOki1vc3BiduLLPwUUDXOgMC5l.jpeg?imageView2/2/w/80/h/80/q/90/format/webp");
+    width: 40px;
+    height: 40px;
+    border-radius: 2px;
+    background-size: cover;
+    background-position: 50%;
+}
+.shopname{
+
+    font-size: 14px;
+}
+.ant-menu-item{
+    font-size: 14px!important;
+}
+
+hr.line{
+    margin: 10px 14px;
+    border: 0px solid red;
+    height: 1px;
+    background: #eee;
+}
+.app-userinfo {
+    position: fixed;
+    padding: 16px 0;
+    border-top: 1px solid #eee;
+    margin: 0 15px;
+    bottom: 0;
+    width: 170px;
+    background: #fff;
+    cursor: pointer;
+}

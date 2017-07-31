@@ -1,0 +1,30 @@
+.wrap{width: 100%; margin: 0 auto;}
+.main{float: left; width: 100%; min-height:30px;}
+.main-inner{margin-right: 330px; min-height:30px}
+.extra { float:left; width:300px; min-height:30px; margin-left:-300px; }
+
+.panel{
+	padding: 20px;
+}
+.panel b{
+	font-size: 22px
+}
+.panel small {
+	color: #cecece;
+}
+.mb20{
+	margin-bottom: 20px
+}
+.mb10{
+	margin-bottom: 10px
+}
+
+.todo-item{
+	display: block;
+	padding: 0 12px;
+	line-height: 50px;
+	border: 1px solid #eee;
+	border-left: 3px solid #f60;
+	background: #fff;
+	margin-bottom: 10px;
+}
