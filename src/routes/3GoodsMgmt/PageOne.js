@@ -10,6 +10,7 @@ const RadioGroup = Radio.Group;
 const Option = Select.Option;
 
 const Search = Input.Search;
+
 const columns = [{
   title: '打印机', dataIndex: 'item4', key: 'item4', }, {
   title: '打印接机身号码', dataIndex: 'item5', key: 'item5', }, {
@@ -27,36 +28,16 @@ const columns = [{
 }];
 
 const data = [{
-  key: '1',
-  item1: 'John Brown',
-  item2: 'John Brown',
-  item3: 'John Brown',
-  item4: 'John Brown',
-  item5: 'John Brown',
-  item6: 'John Brown',
-}, {
-  key: '2',
-  item1: 'John Brown',
-  item2: 'John Brown',
-  item3: 'John Brown',
-  item4: 'John Brown',
-  item5: 'John Brown',
-  item6: 'John Brown',
-}, {
-  key: '3',
-  item1: 'John Brown',
-  item2: 'John Brown',
-  item3: 'John Brown',
-  item4: 'John Brown',
-  item5: 'John Brown',
-  item6: 'John Brown',
-}];
+  key: '1', item1: 'John Brown', item2: 'John Brown', item3: 'John Brown', item4: 'John Brown', item5: 'John Brown', item6: 'John Brown', }, {
+  key: '2', item1: 'John Brown', item2: 'John Brown', item3: 'John Brown', item4: 'John Brown', item5: 'John Brown', item6: 'John Brown', }, {
+  key: '3', item1: 'John Brown', item2: 'John Brown', item3: 'John Brown', item4: 'John Brown', item5: 'John Brown', item6: 'John Brown', }];
+
 
 class index extends React.Component {
   render(){
     return (
         <div>
-          <div className="mb10">
+          <div className="mb10 searchbg" >
             <Search placeholder="input search text"style={{ marginRight:"10px", width: 200 }} onSearch={value => console.log(value)} />
             <Select defaultValue="lucy" style={{  width: 120 }} >
               <Option value="jack">Jack</Option>

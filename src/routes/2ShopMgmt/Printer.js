@@ -52,7 +52,7 @@ class index extends React.Component {
         <div>
         	<div className="mb10">
             <Modal title="新建打印机"><PrinterForm /> </Modal>
-	        	<Button type="primary" >新建打印机</Button> <Button type="primary"  outline >购买打印机</Button>
+	        	<Button type="primary" >普通按钮</Button> <Button type="primary"  outline >购买打印机</Button>
         	</div>
 
         	<Table columns={columns} dataSource={data} />
