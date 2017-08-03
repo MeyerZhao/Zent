@@ -21,9 +21,12 @@ export default class extends React.Component {
            selectedKeys={[this.state.current]}
            mode="horizontal"
          >
-           <Menu.Item key="1"><Link to="/customermgmta">客户管理 </Link></Menu.Item>
-           <Menu.Item key="2"><Link to="/customermgmtb">标签管理 </Link> </Menu.Item>
-           <Menu.Item key="3"><Link to="/customermgmtc">客户反馈 </Link> </Menu.Item>
+           <Menu.Item key="1"><Link to="/stockmgmta">商品库存 </Link></Menu.Item>
+           <Menu.Item key="2"><Link to="/stockmgmtb">商品入库</Link> </Menu.Item>
+           <Menu.Item key="3"><Link to="/stockmgmtc">商品出库 </Link> </Menu.Item>
+           <Menu.Item key="5"><Link to="/stockmgmtd">库存盘点 </Link> </Menu.Item>
+           <Menu.Item key="6"><Link to="/stockmgmte">库存预警 </Link> </Menu.Item>
+           <Menu.Item key="7"><Link to="/stockmgmtf">供应商 </Link> </Menu.Item>
           
          </Menu>
 

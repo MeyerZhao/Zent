@@ -1,22 +1,21 @@
-import React from 'react'
-import { Button, } from 'zent';
-import { Table, Icon } from 'antd';
+import React from 'react';
+import { Table } from 'antd';
 import Modal from '../../components/Modal.js'
-import PrinterForm from './PrinterForm.js'
+import PageFForm from './PageFForm.js'
 
 
 const columns = [{
-  title: '打印机', dataIndex: 'item4', key: 'item4', }, {
-  title: '打印接机身号码', dataIndex: 'item5', key: 'item5', }, {
-  title: '打印机状态', dataIndex: 'item6', key: 'item6', }, {
+  title: 'HUAXM账号', dataIndex: 'item1', key: 'item1', render: text => <a href="">{text}</a>, }, {
+  title: '员工姓名', dataIndex: 'item2', key: 'item2', }, {
+  title: '联系方式', dataIndex: 'item3', key: 'item3', }, {
+  title: '添加人', dataIndex: 'item4', key: 'item4', }, {
+  title: '赋予权限', dataIndex: 'item5', key: 'item5', }, {
+  title: '更新时间', dataIndex: 'item6', key: 'item6', }, {
   title: '操作', key: 'action', render: (text, record) => (
     <span>
+      <a href="">编辑</a>
       <span className="ant-divider" />
-      <a href="">Delete</a>
-      <span className="ant-divider" />
-      <a href="" className="ant-dropdown-link">
-        More actions <Icon type="down" />
-      </a>
+      <a href="">删除</a>
     </span>
   ),
 }];
@@ -50,11 +49,9 @@ class index extends React.Component {
   render(){
     return (
         <div>
-        	<div className="mb10">
-            <Modal title="新建打印机"><PrinterForm /> </Modal>
-	        	<Button type="primary" >普通按钮</Button> <Button type="primary"  outline >购买打印机</Button>
-        	</div>
-
+          <div className="mb10">
+            <Modal title="添加员工"><PageFForm /> </Modal>
+          </div>
         	<Table columns={columns} dataSource={data} />
         </div>
       )

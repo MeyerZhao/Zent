@@ -21,9 +21,9 @@ class index extends React.Component {
            selectedKeys={[this.state.current]}
            mode="horizontal"
          >
-           <Menu.Item key="1"><Link to="/goodsmgmtone">报价管理 </Link></Menu.Item>
-           <Menu.Item key="2"><Link to="/goodsmgmttwo">商品管理 </Link> </Menu.Item>
-           <Menu.Item key="3"><Link to="/goodsmgmtthree">商品分组 </Link> </Menu.Item>
+           <Menu.Item key="1"><Link to="/goodsmgmta">报价管理 </Link></Menu.Item>
+           <Menu.Item key="2"><Link to="/goodsmgmtb">商品管理 </Link> </Menu.Item>
+           <Menu.Item key="3"><Link to="/goodsmgmtc">商品分组 </Link> </Menu.Item>
           
          </Menu>
 
