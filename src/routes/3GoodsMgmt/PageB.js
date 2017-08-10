@@ -1,23 +1,10 @@
-// import React from 'react'
-
-// class index extends React.Component {
-//   render(){
-//     return (
-//         <h1>页面二</h1>
-//       )
-//   }
-// }
-// export default index
-
 import React from 'react'
-import { Button, } from 'zent';
+import { Button, } from 'antd';
 import { Tabs, Input, Select } from 'antd';
 import { Table, Icon } from 'antd';
 const Option = Select.Option;
 const Search = Input.Search;
 const TabPane = Tabs.TabPane;
-
-
 
 const columns = [{
   title: '打印机', dataIndex: 'item4', key: 'item4', }, {
@@ -66,22 +53,23 @@ class index extends React.Component {
     return (
     		<div>
     			<div className="mb10 searchbg" >
-    				<span style={{verticalAlign:'1px'}}>
-    				<Button type="primary" >系统商品库</Button><Button type="primary" >自定义商品</Button>
-    				<Button type="primary" >高级搜索</Button>
-    				</span>
-    			  <Search placeholder="input search text"style={{ margin:"0 10px", width: 200 }} onSearch={value => console.log(value)} />
-    			  <Select defaultValue="lucy" style={{  width: 120 }} >
-    			    <Option value="jack">Jack</Option>
-    			    <Option value="lucy">Lucy</Option>
-    			    <Option value="Yiminghe">yiminghe</Option>
-    			  </Select>
+    				<Button type="primary" >系统商品库</Button>
+            <Button type="primary" style={{marginLeft:"10px"}} >自定义商品</Button>
+
+    				<span style={{float:"right"}}>
+            <Search placeholder="输入搜索内容"style={{ margin:"0 10px", width: 200 }} onSearch={value => console.log(value)} />
+            <Button >高级搜索</Button>
+            <Select defaultValue="lucy" style={{marginLeft:"10px", width: 120 }} >
+              <Option value="jack">Jack</Option>
+              <Option value="lucy">Lucy</Option>
+              <Option value="Yiminghe">yiminghe</Option>
+            </Select>
+            </span>
     			</div>
 
 	        <Tabs defaultActiveKey="1" tabPosition='left'>
-	          <TabPane tab="Tab 1" key="1"><Table columns={columns} dataSource={data} /></TabPane>
-	          <TabPane tab="Tab 2" key="2">Content of Tab Pane 2</TabPane>
-	          <TabPane tab="Tab 3" key="3">Content of Tab Pane 3</TabPane>
+	          <TabPane tab="玫瑰" key="1"><Table columns={columns} dataSource={data} /></TabPane>
+	          <TabPane tab="康乃馨" key="2">Content of Tab Pane 2</TabPane>
 	        </Tabs>
     		</div>
       )

@@ -1,16 +1,5 @@
-// import React from 'react'
-// class index extends React.Component {
-//   render(){
-//     return (
-//         <h1>页面三</h1>
-//       )
-//   }
-// }
-// export default index
-
 import React from 'react'
-import { Button, } from 'zent';
-import { Table, Icon } from 'antd';
+import { Table, Icon, Button } from 'antd';
 
 const columns = [{
   title: '打印机', dataIndex: 'item4', key: 'item4', }, {
@@ -39,7 +28,7 @@ class index extends React.Component {
       <div>
         <div className="mb10">
           <div style={{textAlign:"left"}}>
-            <Button type="primary" >新建分组</Button> <Button type="primary"  outline >占位按钮</Button>
+            <Button type="primary" >新建分组</Button> 
           </div>
         </div>
 

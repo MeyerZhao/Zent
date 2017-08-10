@@ -11,12 +11,16 @@ import WorkBench from './routes/1WorkBench/';
 
 // 2店铺管理
 import ShopMgmt from './routes/2ShopMgmt/';
-    import ShopInfo from './routes/2ShopMgmt/PageA';
-    import ShopInfoEdit from './routes/2ShopMgmt/PageB';
-    import ShopDecoration from './routes/2ShopMgmt/PageC';
-    import ShopSet from './routes/2ShopMgmt/PageD';
-    import Printer from './routes/2ShopMgmt/PageE';
-    import Administrators from './routes/2ShopMgmt/PageF';
+    import ShopMgmtA from './routes/2ShopMgmt/PageA';
+        import ShopMgmtA1 from './routes/2ShopMgmt/PageA1';
+
+    import ShopMgmtB from './routes/2ShopMgmt/PageB';
+    import ShopMgmtC from './routes/2ShopMgmt/PageC';
+    import ShopMgmtD from './routes/2ShopMgmt/PageD';
+        import ShopMgmtDFormA from './routes/2ShopMgmt/PageDFormA';
+
+    import ShopMgmtE from './routes/2ShopMgmt/PageE';
+        import ShopMgmtEFormA from './routes/2ShopMgmt/PageEFormA';
 
 // 3商品管理
 import GoodsMgmt from './routes/3GoodsMgmt/';
@@ -50,6 +54,10 @@ import CustomerMgmt from './routes/6CustomerMgmt/';
 import AssetsMgmt from './routes/7AssetsMgmt/';
     import AssetsMgmtA from './routes/7AssetsMgmt/PageA';
     import AssetsMgmtB from './routes/7AssetsMgmt/PageB';
+        import AssetsMgmtBFormA from './routes/7AssetsMgmt/PageBFormA';
+        import AssetsMgmtBFormB from './routes/7AssetsMgmt/PageBFormB';
+        import AssetsMgmtBFormC from './routes/7AssetsMgmt/PageBFormC';
+        import AssetsMgmtBFormD from './routes/7AssetsMgmt/PageBFormD';
 
 // 8应用插件
 import Appplugin from './routes/8Appplugin/';
@@ -73,12 +81,16 @@ ReactDOM.render(
       <IndexRoute component={WorkBench}/>
 
       <Route path="/shopmgmt" component={ShopMgmt}>
-        <IndexRoute component={ShopInfo} />
-        <Route path="/shopmgmt/shopinfoedit" component={ShopInfoEdit} />
-        <Route path="/shopmgmt/shopdecoration" component={ShopDecoration} />
-        <Route path="/shopmgmt/shopset" component={ShopSet} />
-        <Route path="/shopmgmt/printer" component={Printer} />
-        <Route path="/shopmgmt/administrators" component={Administrators} />
+        <IndexRoute component={ShopMgmtA} />
+        <Route path="/shopmgmt/shopmgmta" component={ShopMgmtA} />
+          <Route path="/shopmgmt/shopmgmta/baseinfo" component={ShopMgmtA1} />
+
+        <Route path="/shopmgmt/shopmgmtb" component={ShopMgmtB} />
+        <Route path="/shopmgmt/shopmgmtc" component={ShopMgmtC} />
+        <Route path="/shopmgmt/shopmgmtd" component={ShopMgmtD} />
+                <Route path="/shopmgmt/shopmgmtdforma" component={ShopMgmtDFormA} />
+        <Route path="/shopmgmt/shopmgmte" component={ShopMgmtE} />
+                <Route path="/shopmgmt/shopmgmteforma" component={ShopMgmtEFormA} />
       </Route>
 
       <Route path="/goodsmgmt" component={GoodsMgmt}>
@@ -117,6 +129,10 @@ ReactDOM.render(
         <IndexRoute component={AssetsMgmtA}></IndexRoute>
         <Route path="/assetsmgmta" component={AssetsMgmtA} />
         <Route path="/assetsmgmtb" component={AssetsMgmtB} />
+            <Route path="/assetsmgmtb/assetsmgmtbforma" component={AssetsMgmtBFormA} />
+            <Route path="/assetsmgmtb/assetsmgmtbformb" component={AssetsMgmtBFormB} />
+            <Route path="/assetsmgmtb/assetsmgmtbformc" component={AssetsMgmtBFormC} />
+            <Route path="/assetsmgmtb/assetsmgmtbformd" component={AssetsMgmtBFormD} />
       </Route>
 
       <Route path="/appplugin" component={Appplugin}>

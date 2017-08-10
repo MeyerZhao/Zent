@@ -39,3 +39,41 @@ hr.line{
     background: #fff;
     cursor: pointer;
 }
+.sidebar-icon{
+    width: 24px;
+    height: 24px;
+    background: url(http://img.yzcdn.cn/canyin/dashboard/icon/icon.png) no-repeat;
+    padding-left: 35px;
+}
+
+.sidebar-icon-goods {
+    background-position: 0 -26px;
+}
+.sidebar-icon-shop {
+    background-position: 0 -75px;
+}
+.sidebar-icon-order {
+    background-position: 0 -50px;
+}
+.sidebar-icon-plugin {
+    background-position: 0 -122px;
+}
+.sidebar-icon-asset {
+    background-position: 0 -99px;
+}
+
+.app-userinfo-avatar {
+    position: absolute;
+    top: 16px;
+    left: 15px;
+    width: 18px;
+    height: 18px;
+    background: url(https://img.yzcdn.cn/public_files/2017/04/01/64a5b3fd10d3d11d726a09d07a5d9aca.png) no-repeat;
+    background-position: 0 -175px;
+}
+.app-userinfo__phone {
+    color: #555;
+    font-size: 14px;
+    line-height: 18px;
+    margin-left: 50px;
+}

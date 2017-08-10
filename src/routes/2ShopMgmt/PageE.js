@@ -1,8 +1,7 @@
 import React from 'react'
-import { Button, } from 'zent';
+import { Button } from 'antd';
 import { Table, Icon } from 'antd';
-import Modal from '../../components/Modal.js'
-import PageEForm from './PageEForm'
+import { Link } from 'react-router';
 
 
 const columns = [{
@@ -51,8 +50,9 @@ class index extends React.Component {
     return (
         <div>
         	<div className="mb10">
-            <Modal title="新建打印机"><PageEForm /> </Modal>
-	        	<Button type="primary" >普通按钮</Button> <Button type="primary"  outline >购买打印机</Button>
+            <Link to="/shopmgmt/shopmgmteforma"><Button type="primary" >新建打印机</Button></Link>
+
+            <Button type="primary" style={{marginLeft:"6px"}}  ghost >购买打印机</Button>
         	</div>
 
         	<Table columns={columns} dataSource={data} />

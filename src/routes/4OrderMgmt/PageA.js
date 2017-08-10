@@ -1,30 +1,25 @@
-// import React from 'react'
-
-// class index extends React.Component {
-//   render(){
-//     return (
-//         <h1>页面二</h1>
-//       )
-//   }
-// }
-// export default index
-
 import React from 'react'
 import { Button, } from 'antd';
 import { Tabs, Input, Select } from 'antd';
 import { Table, Icon } from 'antd';
 import { DatePicker } from 'antd';
+
 const { RangePicker } = DatePicker;
 const Option = Select.Option;
 const Search = Input.Search;
 const TabPane = Tabs.TabPane;
 
-
-
 const columns = [{
-  title: '打印机', dataIndex: 'item4', key: 'item4', }, {
-  title: '打印接机身号码', dataIndex: 'item5', key: 'item5', }, {
-  title: '打印机状态', dataIndex: 'item6', key: 'item6', }, {
+  title: '订单编号', dataIndex: 'item1', key: 'item1', }, {
+  title: '客户', dataIndex: 'item2', key: 'item2', }, {
+  title: '收货人', dataIndex: 'item3', key: 'item3', }, {
+  title: '配送地区', dataIndex: 'item4', key: 'item4', }, {
+  title: '订单金额', dataIndex: 'item5', key: 'item5', }, {
+  title: '支付方式', dataIndex: 'item6', key: 'item6', }, {
+  title: '发货日期', dataIndex: 'item7', key: 'item7', }, {
+  title: '订单状态', dataIndex: 'item8', key: 'item8', }, {
+  title: '物流状态', dataIndex: 'item9', key: 'item9', }, {
+  title: '下单时间', dataIndex: 'item10', key: 'item10', }, {
   title: '操作', key: 'action', render: (text, record) => (
     <span>
       <span className="ant-divider" />
@@ -80,27 +75,27 @@ class index extends React.Component {
 
 	    		<div className="searchbg">
 				
-	    			  <Search className="mb10 " placeholder="输入关键字" style={{ marginRight:"10px", width: 200 }} onSearch={value => console.log(value)} />
-	    			  <Select className="mb10 " placeholder="支付方式" style={{ marginRight:"10px", width: 120 }} >
+	    			  <Search placeholder="输入关键字" style={{ marginRight:"10px", width: 200 }} onSearch={value => console.log(value)} />
+	    			  <Select placeholder="支付方式" style={{ marginRight:"10px", width: 120 }} >
 	    			    <Option value="1">下拉选择1</Option>
 	    			    <Option value="2">下拉选择2</Option>
 	    			    <Option value="3">下拉选择3</Option>
 	    			  </Select>
-	    			  <Select className="mb10 " defaultValue="1" style={{ marginRight:"10px", width: 120 }} >
+	    			  <Select defaultValue="1" style={{ marginRight:"10px", width: 120 }} >
 	    			    <Option value="1">下单时间</Option>
 	    			    <Option value="2">发货时间</Option>
 	    			  </Select>
-	    			  <RangePicker style={{ marginRight:"10px", marginBottom:"10px" }}  />
+	    			  <RangePicker style={{ marginRight:"10px"}}  />
 	    			  <Button type="primary" >搜索</Button> <Button type="primary" >重置</Button>
 	    			
 	    		</div>
 
 	        <Tabs defaultActiveKey="1" tabPosition='left'>
-	          <TabPane tab="Tab 1" key="1">
-	          	<div className="table-tab mb20 mt10">
+	          <TabPane tab="全部" key="1">
+	          	<div className="table-tab ">
 		          	全部 | 待支付 | 待确认（1） | 待配送（33）| 已签收 | 待转账 | 维权中（2） | 交易关闭 | 交易成功
 	          	</div>
-	          	<div className="table-tab mb10">
+	          	<div className="mb10">
 		          	<Select placeholder="批量操作" style={{ marginRight:"10px", width: 120 }} >
 		          	  <option value="批量操作">批量操作</option>
     	            <option value="批量确认">批量确认</option>
@@ -116,8 +111,8 @@ class index extends React.Component {
 	          	</div>
 	          	<Table rowSelection={rowSelection} columns={columns} dataSource={data} />
 	          </TabPane>
-	          <TabPane tab="Tab 2" key="2">Content of Tab Pane 2</TabPane>
-	          <TabPane tab="Tab 3" key="3">Content of Tab Pane 3</TabPane>
+	          <TabPane tab="5月20日" key="2">Content of Tab Pane 2</TabPane>
+	          <TabPane tab="5月19日" key="3">Content of Tab Pane 3</TabPane>
 	        </Tabs>
 
     		</div>

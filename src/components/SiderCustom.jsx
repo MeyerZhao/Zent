@@ -2,7 +2,7 @@
  * Created by hao.cheng on 2017/4/13.
  */
 import React, { Component } from 'react';
-import { Layout, Menu, Icon } from 'antd';
+import { Layout, Menu } from 'antd';
 import { Link } from 'react-router';
 import './SiderCustom.css';
 
@@ -70,48 +70,50 @@ class SiderCustom extends Component {
                 <Menu
                     style={{borderRight: "0px solid #e9e9e9"}}
                     onClick={this.menuClick}
-                    mode={this.state.mode}
+                    mode='inline'
                     selectedKeys={[this.state.selectedKey]}
                 >
                     <Menu.Item key="/">
-                      <Link to="/"> <Icon type="area-chart" /> <span >1工作台</span> </Link>
+                      <Link to="/"> <span className="sidebar-icon">1工作台</span></Link>
                     </Menu.Item>
 
                     <Menu.Item key="/shopmgmt">
-                      <Link to="/shopmgmt"> <Icon type="contacts" /> <span >2店铺管理</span> </Link>
+                      <Link to="/shopmgmt"> <span className="sidebar-icon sidebar-icon-shop" >2店铺管理</span> </Link>
                     </Menu.Item>
 
                     <Menu.Item key="/goodsmgmt">
-                      <Link to="/goodsmgmt"> <Icon type="contacts" /> <span >3商品管理</span> </Link>
+                      <Link to="/goodsmgmt"> <span className="sidebar-icon sidebar-icon-goods" >3商品管理</span> </Link>
                     </Menu.Item>
 
                     <Menu.Item key="/ordermgmt">
-                      <Link to="/ordermgmt"> <Icon type="contacts" /> <span >4订单管理</span> </Link>
+                      <Link to="/ordermgmt"> <span className="sidebar-icon sidebar-icon-order" >4订单管理</span> </Link>
                     </Menu.Item>
 
                     <Menu.Item key="/stockmgmt">
-                      <Link to="/stockmgmt"> <Icon type="contacts" /> <span >5库存管理</span> </Link>
+                      <Link to="/stockmgmt"> <span className="sidebar-icon" >5库存管理</span> </Link>
                     </Menu.Item>
 
                     <Menu.Item key="/customermgmt">
-                      <Link to="/customermgmt"> <Icon type="contacts" /> <span >6客户管理</span> </Link>
+                      <Link to="/customermgmt"> <span className="sidebar-icon" >6客户管理</span> </Link>
                     </Menu.Item>
 
                     <Menu.Item key="/assetsmgmt">
-                      <Link to="/assetsmgmt"> <Icon type="contacts" /> <span >7资产管理</span> </Link>
+                      <Link to="/assetsmgmt"> <span className="sidebar-icon sidebar-icon-asset" >7资产管理</span> </Link>
                     </Menu.Item>
 
                      <Menu.Item key="/appplugin">
-                      <Link to="/appplugin"> <Icon type="contacts" /> <span >8应用插件</span> </Link>
+                      <Link to="/appplugin"> <span className="sidebar-icon sidebar-icon-plugin" >8应用插件</span> </Link>
                     </Menu.Item>
 
                      <Menu.Item key="/dataanalysis">
-                      <Link to="/dataanalysis"> <Icon type="contacts" /> <span >9数据分析</span> </Link>
+                      <Link to="/dataanalysis"> <span className="sidebar-icon" >9数据分析</span> </Link>
                     </Menu.Item>
 
                 </Menu>
+
             <div className="app-userinfo">
-                18858568856
+                <div className="app-userinfo-avatar"></div>
+                <div className="app-userinfo__phone">18858568856</div>
             </div>
         
             </Sider>

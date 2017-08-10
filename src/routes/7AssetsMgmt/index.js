@@ -26,7 +26,7 @@ export default class extends React.Component {
           
          </Menu>
 
-         <div style={{padding:"20px"}}>
+         <div>
            {this.props.children}
          </div>
 

@@ -1,14 +1,12 @@
 import React from 'react'
-import { Button, } from 'zent';
+import { Button, } from 'antd';
 import { Table, Icon } from 'antd';
 import { Input } from 'antd';
 import { Select } from 'antd';
+import { Tabs } from 'zent';
+const TabPanel = Tabs.TabPanel;
 
-import { Radio } from 'antd';
-const RadioButton = Radio.Button;
-const RadioGroup = Radio.Group;
 const Option = Select.Option;
-
 const Search = Input.Search;
 
 const columns = [{
@@ -34,33 +32,40 @@ const data = [{
 
 
 class index extends React.Component {
+  state = {
+    activeId: '1'
+  }
+  onTabChange = (id) => {
+    this.setState({
+      activeId: id
+    });
+  }
   render(){
     return (
         <div>
           <div className="mb10 searchbg" >
-            <Search placeholder="input search text"style={{ marginRight:"10px", width: 200 }} onSearch={value => console.log(value)} />
-            <Select defaultValue="lucy" style={{  width: 120 }} >
-              <Option value="jack">Jack</Option>
-              <Option value="lucy">Lucy</Option>
-              <Option value="Yiminghe">yiminghe</Option>
+            <Search placeholder="输入搜索内容"style={{ marginRight:"10px", width: 200 }} onSearch={value => console.log(value)} />
+            <Select defaultValue="全部分组" style={{ marginRight:"10px", width: 200 }} >
+              <Option value="1">分组一</Option>
+              <Option value="2">分组二</Option>
+              <Option value="3">分组三</Option>
             </Select>
+            <Button type="primary" >搜索</Button>
           </div>
 
           <div className="mb10">
-            <RadioGroup defaultValue="a" size="large" >
-                <RadioButton value="a">已报价</RadioButton>
-                <RadioButton value="b">已售完</RadioButton>
-                <RadioButton value="c">未报价</RadioButton>
-            </RadioGroup>
-
-            <div style={{float:"right"}}>
-              <Button type="primary" >导出到Excel</Button> <Button type="primary"  outline >价格导入</Button>
-            </div>
-
-            
+            <Tabs activeId={this.state.activeId} onTabChange={this.onTabChange} >
+              <TabPanel tab="已报价" id="1" >
+                <div className="mb10">
+                    <Button type="primary" >导出到Excel</Button> <Button type="primary"  outline >价格导入</Button>
+                </div>
+                <Table columns={columns} dataSource={data} />
+              </TabPanel>
+              <TabPanel tab="已售完"id="2"> <div>选项二的内容</div> </TabPanel> 
+              <TabPanel tab="未报价"id="3"> <div>选项三的内容</div> </TabPanel>
+            </Tabs>
           </div>
 
-          <Table columns={columns} dataSource={data} />
         </div>
       )
   }

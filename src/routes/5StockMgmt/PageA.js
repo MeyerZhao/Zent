@@ -1,31 +1,19 @@
 import React from 'react'
-import { Button, } from 'zent';
-import { Table, Icon } from 'antd';
-import { Input } from 'antd';
-import { Select } from 'antd';
-
-import { Radio } from 'antd';
+import { Table, Radio, Input, Button  } from 'antd';
 const RadioButton = Radio.Button;
 const RadioGroup = Radio.Group;
-const Option = Select.Option;
-
 const Search = Input.Search;
 
 const columns = [{
-  title: '打印机', dataIndex: 'item4', key: 'item4', }, {
-  title: '打印接机身号码', dataIndex: 'item5', key: 'item5', }, {
-  title: '打印机状态', dataIndex: 'item6', key: 'item6', }, {
-  title: '操作', key: 'action', render: (text, record) => (
-    <span>
-      <span className="ant-divider" />
-      <a href="">Delete</a>
-      <span className="ant-divider" />
-      <a href="" className="ant-dropdown-link">
-        More actions <Icon type="down" />
-      </a>
-    </span>
-  ),
-}];
+  title: '商品', dataIndex: 'item1', key: 'item1', }, {
+  title: 'SKU编号', dataIndex: 'item2', key: 'item2', }, {
+  title: '属性', dataIndex: 'item3', key: 'item3', }, {
+  title: '入库数', dataIndex: 'item4', key: 'item4', }, {
+  title: '入库金额', dataIndex: 'item5', key: 'item5', }, {
+  title: '已出库数', dataIndex: 'item6', key: 'item6', }, {
+  title: '出库金额', dataIndex: 'item7', key: 'item7', }, {
+  title: '收益', dataIndex: 'item8', key: 'item8', }, {
+  title: '库存量', dataIndex: 'item9', key: 'item9', }];
 
 const data = [{
   key: '1', item1: 'John Brown', item2: 'John Brown', item3: 'John Brown', item4: 'John Brown', item5: 'John Brown', item6: 'John Brown', }, {
@@ -38,12 +26,7 @@ class index extends React.Component {
     return (
         <div>
           <div className="mb10 searchbg" >
-            <Search placeholder="input search text"style={{ marginRight:"10px", width: 200 }} onSearch={value => console.log(value)} />
-            <Select defaultValue="lucy" style={{  width: 120 }} >
-              <Option value="jack">Jack</Option>
-              <Option value="lucy">Lucy</Option>
-              <Option value="Yiminghe">yiminghe</Option>
-            </Select>
+            <Search placeholder="搜索"style={{ marginRight:"10px", width: 200 }} onSearch={value => console.log(value)} />
           </div>
 
           <div className="mb10">
@@ -55,8 +38,11 @@ class index extends React.Component {
 
           <div className="mb10">
               <Button type="primary" >新增入库</Button>
-              <Button type="primary" >新增出库</Button>
-              <Button type="primary"  outline >导出EXCEL</Button>
+              <Button type="primary" style={{marginLeft:"6px"}}>新增出库</Button>
+              <Button style={{marginLeft:"6px"}}>导出EXCEL</Button>
+              <span style={{float:"right", marginTop:"10px"}}>
+                订单数：11  客户数：10   订单金额：200.00  商品数：123
+              </span>
           </div>
 
           <Table columns={columns} dataSource={data} />

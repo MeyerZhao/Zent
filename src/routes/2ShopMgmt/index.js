@@ -21,15 +21,15 @@ class index extends React.Component {
            selectedKeys={[this.state.current]}
            mode="horizontal"
          >
-           <Menu.Item key="店铺信息"><Link to="/shopmgmt/shopinfoedit">店铺信息 </Link></Menu.Item>
-           <Menu.Item key="店铺装修"><Link to="/shopmgmt/shopdecoration">店铺装修 </Link> </Menu.Item>
-           <Menu.Item key="店铺设置"><Link to="/shopmgmt/shopset">店铺设置 </Link> </Menu.Item>
-           <Menu.Item key="管理员"> <Link to="/shopmgmt/administrators">管理员</Link> </Menu.Item>
-           <Menu.Item key="打印机"> <Link to="/shopmgmt/printer">打印机</Link> </Menu.Item>
+           <Menu.Item key="店铺信息"><Link to="/shopmgmt/shopmgmta">店铺信息 </Link></Menu.Item>
+           <Menu.Item key="店铺装修"><Link to="/shopmgmt/shopmgmtb">店铺装修 </Link> </Menu.Item>
+           <Menu.Item key="店铺设置"><Link to="/shopmgmt/shopmgmtc">店铺设置 </Link> </Menu.Item>
+           <Menu.Item key="管理员"> <Link to="/shopmgmt/shopmgmtd">管理员</Link> </Menu.Item>
+           <Menu.Item key="打印机"> <Link to="/shopmgmt/shopmgmte">打印机</Link> </Menu.Item>
           
          </Menu>
 
-         <div style={{padding:"20px"}}>
+         <div style={{padding:"20px 30px"}}>
            {this.props.children}
          </div>
 

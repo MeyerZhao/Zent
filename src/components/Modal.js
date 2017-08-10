@@ -1,6 +1,5 @@
 import React from 'react'
-import { Modal } from 'antd';
-import { Button } from 'zent';
+import { Modal, Button } from 'antd';
 import './Modal.css';
 
 export default class extends React.Component {
@@ -24,7 +23,7 @@ export default class extends React.Component {
   }
   render() {
     return (
-      <span style={{marginRight:"10px"}}>
+      <span >
         <Button type="primary" onClick={this.showModal} >{this.props.title}</Button>
         <Modal
           title={this.props.title}

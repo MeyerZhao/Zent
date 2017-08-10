@@ -1,11 +1,11 @@
-
 import React from 'react'
-import { Button, } from 'zent';
-import { Tabs, Input, Select } from 'antd';
+import { Input, Form, Button } from 'antd';
 import { Table, Icon } from 'antd';
+import { DatePicker, Select } from 'antd';
 const Option = Select.Option;
-const Search = Input.Search;
-const TabPane = Tabs.TabPane;
+const { RangePicker } = DatePicker;
+const FormItem = Form.Item;
+
 
 
 
@@ -51,30 +51,45 @@ const data = [{
   item6: 'John Brown',
 }];
 
-class index extends React.Component {
+export default class index extends React.Component {
   render(){
     return (
-    		<div>
-    			<div className="mb10 searchbg" >
-    				<span style={{verticalAlign:'1px'}}>
-    				<Button type="primary" >系统商品库</Button><Button type="primary" >自定义商品</Button>
-    				<Button type="primary" >高级搜索</Button>
-    				</span>
-    			  <Search placeholder="input search text"style={{ margin:"0 10px", width: 200 }} onSearch={value => console.log(value)} />
-    			  <Select defaultValue="lucy" style={{  width: 120 }} >
-    			    <Option value="jack">Jack</Option>
-    			    <Option value="lucy">Lucy</Option>
-    			    <Option value="Yiminghe">yiminghe</Option>
-    			  </Select>
-    			</div>
+        <div>
+          <div className="searchbg">          
+            <Form layout='inline'>
+              <FormItem label="搜索">
+                <Input placeholder="商品/SKU/供应商/批次号" />
+              </FormItem>
+              <FormItem label="入库时间">
+                <RangePicker />
+              </FormItem>
+              <FormItem label="商品分组">
+                <Select defaultValue="商品分组" style={{  width: 120 }} >
+                  <Option value="分组1">分组1</Option>
+                  <Option value="分组2">分组2</Option>
+                  <Option value="分组3">分组3</Option>
+                </Select>
+              </FormItem>
+              <FormItem >
+                <Button type="primary" >搜索</Button> <Button style={{ marginLeft: 8 }}>重置</Button>
+              </FormItem>
+            </Form>             
+          </div>
 
-	        <Tabs defaultActiveKey="1" tabPosition='left'>
-	          <TabPane tab="Tab 1" key="1"><Table columns={columns} dataSource={data} /></TabPane>
-	          <TabPane tab="Tab 2" key="2">Content of Tab Pane 2</TabPane>
-	          <TabPane tab="Tab 3" key="3">Content of Tab Pane 3</TabPane>
-	        </Tabs>
-    		</div>
+              <div className="table-tab ">
+                全部 | 170518 | 170510
+              </div>
+
+              <div className="table-tab mb10">
+                <Button type="primary" >扫码入库</Button>
+                <Button style={{marginLeft:"6px"}}>批量导入</Button>
+                <span style={{float:"right", marginTop:"10px"}}>
+                    商品数：11  入库总数：8888  入库总额：12.00
+                </span>
+              </div>
+              <Table columns={columns} dataSource={data} />
+              
+        </div>
       )
   }
 }
-export default index

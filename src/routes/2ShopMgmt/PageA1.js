@@ -1,6 +1,7 @@
-import React from 'react';
-import { Button } from 'zent';
-import { Form, Input, Tooltip, Icon, Cascader, Select, Row, Col, Checkbox, AutoComplete } from 'antd';
+import React from 'react'
+import { Form, Input, Cascader, Select, Row, Col, Checkbox, Button, AutoComplete } from 'antd';
+import './ShopInfo.css';
+import Logo from '../../components/Logo.js'
 const FormItem = Form.Item;
 const Option = Select.Option;
 const AutoCompleteOption = AutoComplete.Option;
@@ -112,7 +113,30 @@ class RegistrationForm extends React.Component {
     ));
 
     return (
-      <Form onSubmit={this.handleSubmit}>
+      <Form onSubmit={this.handleSubmit} style={{width:"540px"}}>
+      	<FormItem
+      	  {...formItemLayout}
+      	  label="店铺名称"
+      	  hasFeedback
+      	>
+      	  {getFieldDecorator('shopname', {
+      	    rules: [{ required: true, message: '请输入店铺名称!', whitespace: true }],
+      	  })(
+      	    <Input value="0571" disabled/>
+      	  )}
+      	</FormItem>
+      	<FormItem
+      	  {...formItemLayout}
+      	  label="店铺LOGO"
+      	  hasFeedback
+      	>
+      	  {getFieldDecorator('shoplogo', {
+      	    rules: [{ required: true, message: '请上传店铺LOGO!', whitespace: true }],
+      	  })(
+      	    <Logo />
+      	  )}
+      	</FormItem>
+
         <FormItem
           {...formItemLayout}
           label="E-mail"
@@ -128,9 +152,10 @@ class RegistrationForm extends React.Component {
             <Input />
           )}
         </FormItem>
+
         <FormItem
           {...formItemLayout}
-          label="Password"
+          label="营业时间"
           hasFeedback
         >
           {getFieldDecorator('password', {
@@ -143,6 +168,7 @@ class RegistrationForm extends React.Component {
             <Input type="password" />
           )}
         </FormItem>
+
         <FormItem
           {...formItemLayout}
           label="Confirm Password"
@@ -158,24 +184,7 @@ class RegistrationForm extends React.Component {
             <Input type="password" onBlur={this.handleConfirmBlur} />
           )}
         </FormItem>
-        <FormItem
-          {...formItemLayout}
-          label={(
-            <span>
-              Nickname&nbsp;
-              <Tooltip title="What do you want other to call you?">
-                <Icon type="question-circle-o" />
-              </Tooltip>
-            </span>
-          )}
-          hasFeedback
-        >
-          {getFieldDecorator('nickname', {
-            rules: [{ required: true, message: 'Please input your nickname!', whitespace: true }],
-          })(
-            <Input />
-          )}
-        </FormItem>
+
         <FormItem
           {...formItemLayout}
           label="Habitual Residence"
@@ -239,7 +248,7 @@ class RegistrationForm extends React.Component {
           )}
         </FormItem>
         <FormItem {...tailFormItemLayout}>
-          <Button type="primary" htmlType="submit" size="large">Register</Button>
+          <Button type="primary" htmlType="submit">Register</Button>
         </FormItem>
       </Form>
     );
@@ -248,4 +257,23 @@ class RegistrationForm extends React.Component {
 
 const WrappedRegistrationForm = Form.create()(RegistrationForm);
 
-export default WrappedRegistrationForm
+
+
+
+
+class index extends React.Component {
+  render(){
+    return (
+    	<div>
+
+    		<div className="mb20">
+	    		<h4 className="block-title mb20"  >编辑资料</h4>
+	    		<WrappedRegistrationForm  />
+    		</div>
+
+    	</div>
+    	)
+  }
+}
+
+export default index

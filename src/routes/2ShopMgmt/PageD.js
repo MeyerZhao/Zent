@@ -1,56 +1,63 @@
-import React from 'react'
-import { Card, Col, Row } from 'antd';
+import React from 'react';
+import { Table, Button } from 'antd';
+import { Link } from 'react-router';
 
-const ColProps = {
-	lg: 6,
-	md: 8,
-  sm: 12,
-  xs: 24,
-  style: {marginBottom: 16},
-}
+const columns = [{
+  title: 'HUAXM账号', dataIndex: 'item1', key: 'item1', render: text => <a href="">{text}</a>, }, {
+  title: '员工姓名', dataIndex: 'item2', key: 'item2', }, {
+  title: '联系方式', dataIndex: 'item3', key: 'item3', }, {
+  title: '添加人', dataIndex: 'item4', key: 'item4', }, {
+  title: '赋予权限', dataIndex: 'item5', key: 'item5', }, {
+  title: '更新时间', dataIndex: 'item6', key: 'item6', }, {
+  title: '操作', key: 'action', render: (text, record) => (
+    <span>
+      <a href="">编辑</a>
+      <span className="ant-divider" />
+      <a href="">删除</a>
+    </span>
+  ),
+}];
+
+const data = [{
+  key: '1',
+  item1: 'John Brown',
+  item2: 'John Brown',
+  item3: 'John Brown',
+  item4: 'John Brown',
+  item5: 'John Brown',
+  item6: 'John Brown',
+}, {
+  key: '2',
+  item1: 'John Brown',
+  item2: 'John Brown',
+  item3: 'John Brown',
+  item4: 'John Brown',
+  item5: 'John Brown',
+  item6: 'John Brown',
+}, {
+  key: '3',
+  item1: 'John Brown',
+  item2: 'John Brown',
+  item3: 'John Brown',
+  item4: 'John Brown',
+  item5: 'John Brown',
+  item6: 'John Brown',
+}];
 
 class index extends React.Component {
   render(){
     return (
-        <div >
-            <Row gutter={16}>
-              <Col {...ColProps} >
-                <Card title="营业时间" >设置自身特定的营业时间和订单切换时间</Card>
-              </Col>
-              <Col {...ColProps} >
-                <Card title="销售区域" >设置自身特定的营业时间和订单切换时间</Card>
-              </Col>
-              <Col {...ColProps} >
-                <Card title="店铺公告" >设置自身特定的营业时间和订单切换时间</Card>
-              </Col>
-              <Col {...ColProps} >
-                <Card title="运费设置" >设置自身特定的营业时间和订单切换时间</Card>
-              </Col>
-              <Col {...ColProps} >
-                <Card title="白条支付" >设置自身特定的营业时间和订单切换时间</Card>
-              </Col>
-              <Col {...ColProps} >
-                <Card title="订货单" >设置自身特定的营业时间和订单切换时间</Card>
-              </Col>
-              <Col {...ColProps} >
-                <Card title="会员价格" >设置自身特定的营业时间和订单切换时间</Card>
-              </Col>
-              <Col {...ColProps} >
-                <Card title="自提点" >设置自身特定的营业时间和订单切换时间</Card>
-              </Col>
-              <Col {...ColProps} >
-                <Card title="库存管理" >设置自身特定的营业时间和订单切换时间</Card>
-              </Col>
-              <Col {...ColProps} >
-                <Card title="配货单" >设置自身特定的营业时间和订单切换时间</Card>
-              </Col>
-              <Col {...ColProps} >
-                <Card title="地址单" >设置自身特定的营业时间和订单切换时间</Card>
-              </Col>
-            </Row>
+        <div>
+          <div className="mb10">
+            <Link to="/shopmgmt/shopmgmtdforma"><Button type="primary" >添加员工</Button></Link>
           </div>
+          <Table columns={columns} dataSource={data} />
+        </div>
       )
   }
 }
 
 export default index
+
+
+

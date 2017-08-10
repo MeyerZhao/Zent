@@ -1,14 +1,3 @@
-// import React from 'react'
-
-// class index extends React.Component {
-//   render(){
-//     return (
-//         <h1>页面二</h1>
-//       )
-//   }
-// }
-// export default index
-
 import React from 'react'
 import { Button, } from 'antd';
 import { Tabs, Input, Select } from 'antd';
@@ -85,10 +74,10 @@ class index extends React.Component {
 
 	        <Tabs defaultActiveKey="1" tabPosition='left'>
 	          <TabPane tab="所有" key="1">
-	          	<div className="table-tab mb20 mt10">
+	          	<div className="table-tab">
 		          	全部 | 待发货（1） | 待签收（3） | 待转账 | 交易成功
 	          	</div>
-	          	<div className="table-tab mb10">
+	          	<div className="mb10">
 		          	<Select placeholder="批量操作" style={{ marginRight:"10px", width: 120 }} >
 		          	  <option value="批量操作">批量操作</option>
     	            <option value="批量确认">批量确认</option>

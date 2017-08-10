@@ -1,26 +1,24 @@
 import React from 'react';
-import { Table, Button } from 'antd';
+import { Table } from 'antd';
 import { Link } from 'react-router';
 
 const columns = [{
   title: '用户注册手机', dataIndex: 'item1', key: 'item1', render: text => <a href="">{text}</a>, }, {
-  title: '用户昵称', dataIndex: 'item2', key: 'item2', }, {
-  title: '白条状态', dataIndex: 'item3', key: 'item3', }, {
-  title: '结算周期', dataIndex: 'item4', key: 'item4', }, {
-  title: '白条额度', dataIndex: 'item5', key: 'item5', }, {
-  title: '白条余额', dataIndex: 'item6', key: 'item6', }, {
-  title: '应收金额', dataIndex: 'item7', key: 'item7', }, {
-  title: '使用次数', dataIndex: 'item8', key: 'item8', }, {
-  title: '更新时间', dataIndex: 'item9', key: 'item9', }, {
-  title: '操作', key: 'action', render: (text, record) => (
+  title: '金额', dataIndex: 'item2', key: 'item2', }, {
+  title: '白条类型', dataIndex: 'item3', key: 'item3', }, {
+  title: '白条额度', dataIndex: 'item4', key: 'item4', }, {
+  title: '白条余额', dataIndex: 'item5', key: 'item5', }, {
+  title: '创建时间', dataIndex: 'item6', key: 'item6', }, {
+  title: '操作人', dataIndex: 'item7', key: 'item7', }, {
+  title: '备注', key: 'action', render: (text, record) => (
     <span>
-	    <Link to="/assetsmgmtb/assetsmgmtbforma">编辑</Link>
+      <Link to="/assetsmgmtb/assetsmgmtbform">编辑</Link>
       <span className="ant-divider" />
-      <Link to="/assetsmgmtb/assetsmgmtbformb">还款</Link>
+      <Link to="/assetsmgmtb/assetsmgmtbforma">还款</Link>
       <span className="ant-divider" />
-      <Link to="/assetsmgmtb/assetsmgmtbformc">额度调整</Link>
+      <Link to="/assetsmgmtb/assetsmgmtbformb">额度调整</Link>
       <span className="ant-divider" />
-      <Link to="/assetsmgmtb/assetsmgmtbformd">白条对账单</Link>
+      <a href="">白条对账单</a>
     </span>
   ),
 }];
@@ -56,9 +54,8 @@ class index extends React.Component {
     return (
         <div style={{padding:"20px 30px"}}>
           <div className="mb10">
-          	<Link to="/assetsmgmtb/assetsmgmtbforma"><Button type="primary" >新建白条账户</Button></Link>
             <span style={{float:"right", marginTop:"10px"}}>
-            	订单数：11  客户数：10   订单金额：200.00  商品数：123
+              当前白条开通用户：18  白条总额：1000,000.00元   应收金额：20,000.00元
             </span>
           </div>
           <Table columns={columns} dataSource={data} />

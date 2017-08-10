@@ -1,24 +1,8 @@
-// import React from 'react'
-
-// class index extends React.Component {
-//   render(){
-//     return (
-//         <h1>页面二</h1>
-//       )
-//   }
-// }
-// export default index
-
 import React from 'react'
-import { Button, Input, Select, Table, Icon } from 'antd';
-
-
-
+import { Button, Input, Table, Icon } from 'antd';
+import { Tabs } from 'zent';
+const TabPanel = Tabs.TabPanel;
 const Search = Input.Search;
-
-
-
-
 const columns = [{
   title: '打印机', dataIndex: 'item4', key: 'item4', }, {
   title: '打印接机身号码', dataIndex: 'item5', key: 'item5', }, {
@@ -64,6 +48,15 @@ const data = [{
 
 
 class index extends React.Component {
+  state = {
+    activeId: '1'
+  }
+
+  onTabChange = (id) => {
+    this.setState({
+      activeId: id
+    });
+  }
   render(){
     return (
     		<div>
@@ -75,22 +68,21 @@ class index extends React.Component {
 	    			</div>
 	    		</div>
 
-					<div className="table-tab mb20 mt10">
-						全部 | 待发货（1） | 待签收（3） | 待转账 | 交易成功
-					</div>
+          <div className="mb10">
+            <Tabs activeId={this.state.activeId} onTabChange={this.onTabChange} >
+              <TabPanel tab="全部" id="1" >
+                <div className="mb10">
+                    <Button type="primary" >导出到Excel</Button> <Button type="primary"  outline >价格导入</Button>
+                </div>
+                <Table columns={columns} dataSource={data} />
+              </TabPanel>
+              <TabPanel tab="已售待处理（2）" id="2"> <div>选项二的内容</div> </TabPanel> 
+              <TabPanel tab="待客户确认 （2）" id="3"> <div>选项三的内容</div> </TabPanel>
+              <TabPanel tab="已关闭" id="4"> <div>选项三的内容</div> </TabPanel>
+              <TabPanel tab="已完成 " id="5"> <div>选项三的内容</div> </TabPanel>
+            </Tabs>
+          </div>
 
-					<div className="table-tab mb10">
-						<Select placeholder="批量操作" style={{ marginRight:"10px", width: 120 }} >
-						  <option value="批量操作">批量操作</option>
-					    <option value="批量确认">批量确认</option>
-					    <option value="批量打印发货单">批量打印发货单</option>
-					    <option value="批量打印收货地址">批量打印收货地址</option>
-					    <option value="批量发货">批量发货</option>
-						</Select>		          	
-						<Button type="primary" >商品统计</Button> 
-
-					</div>
-					<Table  columns={columns} dataSource={data} />
 
     		</div>
       )
