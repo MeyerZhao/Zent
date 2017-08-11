@@ -2,7 +2,6 @@ import React from 'react'
 import { Table, Input, Button, Form, Select, Checkbox } from 'antd';
 import { Link } from 'react-router'
 import { Switch } from 'antd';
-const Search = Input.Search;
 const FormItem = Form.Item;
 const Option = Select.Option;
 

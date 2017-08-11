@@ -1,14 +1,9 @@
 import React from 'react';
 import { Button } from 'zent';
 import { Form, Input, Select } from 'antd';
-import { Radio } from 'antd';
-import { InputNumber } from 'antd';
 import { Switch } from 'antd';
-const options = [
-  { label: '开通', value: 'Enable' },
-  { label: '禁用', value: 'Disable' },
-];
-const RadioGroup = Radio.Group;
+
+
 const FormItem = Form.Item;
 const Option = Select.Option;
 
