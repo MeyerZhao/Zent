@@ -12,7 +12,7 @@ import WorkBench from './routes/1WorkBench/';
 // 2店铺管理
 import ShopMgmt from './routes/2ShopMgmt/';
     import ShopMgmtA from './routes/2ShopMgmt/PageA';
-        import ShopMgmtA1 from './routes/2ShopMgmt/PageA1';
+        import ShopMgmtAFormA from './routes/2ShopMgmt/PageAFormA';
 
     import ShopMgmtB from './routes/2ShopMgmt/PageB';
     import ShopMgmtC from './routes/2ShopMgmt/PageC';
@@ -43,6 +43,7 @@ import StockMgmt from './routes/5StockMgmt/';
     import StockMgmtD from './routes/5StockMgmt/PageD';
     import StockMgmtE from './routes/5StockMgmt/PageE';
     import StockMgmtF from './routes/5StockMgmt/PageF';
+        import StockMgmtFFormA from './routes/5StockMgmt/PageFFormA';
 
 // 6客户管理
 import CustomerMgmt from './routes/6CustomerMgmt/';
@@ -83,7 +84,7 @@ ReactDOM.render(
       <Route path="/shopmgmt" component={ShopMgmt}>
         <IndexRoute component={ShopMgmtA} />
         <Route path="/shopmgmt/shopmgmta" component={ShopMgmtA} />
-          <Route path="/shopmgmt/shopmgmta/baseinfo" component={ShopMgmtA1} />
+          <Route path="/shopmgmt/shopmgmta/shopmgmtaforma" component={ShopMgmtAFormA} />
 
         <Route path="/shopmgmt/shopmgmtb" component={ShopMgmtB} />
         <Route path="/shopmgmt/shopmgmtc" component={ShopMgmtC} />
@@ -116,6 +117,8 @@ ReactDOM.render(
         <Route path='/stockmgmtd' component={StockMgmtD} />
         <Route path='/stockmgmte' component={StockMgmtE} />
         <Route path='/stockmgmtf' component={StockMgmtF} />
+            <Route path='/stockmgmtf/stockmgmtfforma' component={StockMgmtFFormA} />
+
       </Route>
       
       <Route path="/customermgmt" component={CustomerMgmt}>

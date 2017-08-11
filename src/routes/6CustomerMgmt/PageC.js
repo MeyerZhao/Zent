@@ -1,5 +1,7 @@
 import React from 'react'
 import { Button, Input, Table, Icon } from 'antd';
+import { Tabs } from 'zent';
+const TabPanel = Tabs.TabPanel;
 const Search = Input.Search;
 
 const columns = [{
@@ -50,10 +52,17 @@ const data = [{
 
 
 class index extends React.Component {
+  state = {
+    activeId: '1'
+  }
+  onTabChange = (id) => {
+    this.setState({
+      activeId: id
+    });
+  }
   render(){
     return (
     		<div>
-
 	    		<div className="searchbg">
 	    			<div className=" " >    				
 	    			  <Search placeholder="输入关键字" style={{ marginRight:"10px", width: 200 }} onSearch={value => console.log(value)} />
@@ -61,12 +70,20 @@ class index extends React.Component {
 	    			</div>
 	    		</div>
 
-	          	<div className="table-tab" >
-	          	  全部 | 待处理（2） | 已处理
-	          	</div>
+              <div className="mb10">
+                <Tabs activeId={this.state.activeId} onTabChange={this.onTabChange} >
+                  <TabPanel tab="全部" id="1" >
+                    <div className="mb10">
+                        <Button type="primary" >导出到Excel</Button> <Button type="primary"  outline >价格导入</Button>
+                    </div>
+                    <Table columns={columns} dataSource={data} />
+                  </TabPanel>
+                  <TabPanel tab="待处理（2）"id="2"> <div>选项二的内容</div> </TabPanel> 
+                  <TabPanel tab="已处理"id="3"> <div>选项三的内容</div> </TabPanel>
+                </Tabs>
+              </div>
 	          
 
-	          	<Table  columns={columns} dataSource={data} />
 
     		</div>
       )

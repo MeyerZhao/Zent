@@ -5,10 +5,8 @@ import { Input } from 'antd';
 import { Select } from 'antd';
 import { Tabs } from 'zent';
 const TabPanel = Tabs.TabPanel;
-
 const Option = Select.Option;
 const Search = Input.Search;
-
 const columns = [{
   title: '打印机', dataIndex: 'item4', key: 'item4', }, {
   title: '打印接机身号码', dataIndex: 'item5', key: 'item5', }, {

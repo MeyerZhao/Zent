@@ -17,7 +17,7 @@ class index extends React.Component {
 	    			<tr> <td style={{width:"150px", textAlign:"right"}}>营业时间： </td> <td>周一至周日，08:00至20:00、08:00至08:30</td> </tr>
 	    			<tr> <td style={{width:"150px", textAlign:"right"}}>客服电话： </td> <td>18668001236</td> </tr>
 	    			<tr> <td style={{width:"150px", textAlign:"right"}}>门店地址： </td> <td>杭州市 西湖区 文新街道文一西路230号</td> </tr>
-	    			<tr> <td style={{width:"150px", textAlign:"right"}}> </td> <td><Link to="/shopmgmt/shopmgmta/baseinfo"><Button type="primary" ghost >编辑资料</Button></Link></td> </tr>
+	    			<tr> <td style={{width:"150px", textAlign:"right"}}> </td> <td><Link to="/shopmgmt/shopmgmta/shopmgmtaforma"><Button type="primary" ghost >编辑资料</Button></Link></td> </tr>
 	    		</table>
     		</div>
 

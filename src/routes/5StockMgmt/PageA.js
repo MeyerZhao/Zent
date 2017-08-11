@@ -1,7 +1,7 @@
 import React from 'react'
-import { Table, Radio, Input, Button  } from 'antd';
-const RadioButton = Radio.Button;
-const RadioGroup = Radio.Group;
+import { Table, Input, Button  } from 'antd';
+import { Tabs } from 'zent';
+const TabPanel = Tabs.TabPanel;
 const Search = Input.Search;
 
 const columns = [{
@@ -22,30 +22,41 @@ const data = [{
 
 
 class index extends React.Component {
+  state = {
+    activeId: '1'
+  }
+  onTabChange = (id) => {
+    this.setState({
+      activeId: id
+    });
+  }
   render(){
     return (
         <div>
           <div className="mb10 searchbg" >
             <Search placeholder="搜索"style={{ marginRight:"10px", width: 200 }} onSearch={value => console.log(value)} />
+            <Button type="primary" >搜索</Button>
           </div>
 
           <div className="mb10">
-            <RadioGroup defaultValue="a" size="large" >
-                <RadioButton value="a">按商品查看</RadioButton>
-                <RadioButton value="b">按属性查看</RadioButton>
-            </RadioGroup>
+            <Tabs activeId={this.state.activeId} onTabChange={this.onTabChange} >
+              <TabPanel tab="按商品查看" id="1" >
+                <div className="mb10">
+                    <Button type="primary" >新增入库</Button>
+                    <Button type="primary" style={{marginLeft:"6px"}}>新增出库</Button>
+                    <Button style={{marginLeft:"6px"}}>导出EXCEL</Button>
+                    <span style={{float:"right", marginTop:"10px"}}>
+                      订单数：11  客户数：10   订单金额：200.00  商品数：123
+                    </span>
+                </div>
+
+                <Table columns={columns} dataSource={data} />
+              </TabPanel>
+              <TabPanel tab="按属性查看"id="2"> <div>选项二的内容</div> </TabPanel> 
+            </Tabs>
           </div>
 
-          <div className="mb10">
-              <Button type="primary" >新增入库</Button>
-              <Button type="primary" style={{marginLeft:"6px"}}>新增出库</Button>
-              <Button style={{marginLeft:"6px"}}>导出EXCEL</Button>
-              <span style={{float:"right", marginTop:"10px"}}>
-                订单数：11  客户数：10   订单金额：200.00  商品数：123
-              </span>
-          </div>
-
-          <Table columns={columns} dataSource={data} />
+          
         </div>
       )
   }
