@@ -1,27 +1,33 @@
 import React from 'react'
+import { Link } from 'react-router';
 import { Button, Input, Table, Icon } from 'antd';
 import { Tabs } from 'zent';
 const TabPanel = Tabs.TabPanel;
 const Search = Input.Search;
+
+
+
 const columns = [{
-  title: '打印机', dataIndex: 'item4', key: 'item4', }, {
-  title: '打印接机身号码', dataIndex: 'item5', key: 'item5', }, {
-  title: '打印机状态', dataIndex: 'item6', key: 'item6', }, {
+  title: '订单编号', dataIndex: 'item1', key: 'item1', render: (text,record) => <Link to={text}>{record.item2}</Link> }, {
+  title: '客户', dataIndex: 'item2', key: 'item2',  }, {
+  title: '收货人', dataIndex: 'item3', key: 'item3',  }, {
+  title: '订单状态', dataIndex: 'item4', key: 'item4', }, {
+  title: '商品数量', dataIndex: 'item5', key: 'item5', }, {
+  title: '订单金额', dataIndex: 'item6', key: 'item6', }, {
+  title: '发货日期', dataIndex: 'item7', key: 'item7', }, {
+  title: '下单时间', dataIndex: 'item8', key: 'item8', }, {
   title: '操作', key: 'action', render: (text, record) => (
     <span>
+      <a href="">详情</a>
       <span className="ant-divider" />
-      <a href="">Delete</a>
-      <span className="ant-divider" />
-      <a href="" className="ant-dropdown-link">
-        More actions <Icon type="down" />
-      </a>
+      <a href="">备注</a>
     </span>
   ),
 }];
 
 const data = [{
   key: '1',
-  item1: 'John Brown',
+  item1: '/ordermgmtc/ordermgmtcsuba',
   item2: 'John Brown',
   item3: 'John Brown',
   item4: 'John Brown',
@@ -71,9 +77,6 @@ class index extends React.Component {
           <div className="mb10">
             <Tabs activeId={this.state.activeId} onTabChange={this.onTabChange} >
               <TabPanel tab="全部" id="1" >
-                <div className="mb10">
-                    <Button type="primary" >导出到Excel</Button> <Button type="primary"  outline >价格导入</Button>
-                </div>
                 <Table columns={columns} dataSource={data} />
               </TabPanel>
               <TabPanel tab="已售待处理（2）" id="2"> <div>选项二的内容</div> </TabPanel> 

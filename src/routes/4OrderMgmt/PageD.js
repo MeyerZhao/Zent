@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router';
 import { Button, Input, Table } from 'antd';
 import { Tabs } from 'zent';
 const TabPanel = Tabs.TabPanel;
@@ -7,7 +8,7 @@ const Search = Input.Search;
 
 
 const columns = [{
-  title: '订单编号', dataIndex: 'item1', key: 'item1', }, {
+  title: '客户', dataIndex: 'item1', key: 'item1', render: (text,record) => <Link to={text}>{record.item2}</Link> }, {
   title: '客户', dataIndex: 'item2', key: 'item2', }, {
   title: '收货人', dataIndex: 'item3', key: 'item3', }, {
   title: '退款金额', dataIndex: 'item4', key: 'item4', }, {
@@ -27,7 +28,7 @@ const columns = [{
 
 const data = [{
   key: '1',
-  item1: 'John Brown',
+  item1: '/ordermgmtd/ordermgmtdsuba',
   item2: 'John Brown',
   item3: 'John Brown',
   item4: 'John Brown',

@@ -31,9 +31,14 @@ import GoodsMgmt from './routes/3GoodsMgmt/';
 // 4订单管理
 import OrderMgmt from './routes/4OrderMgmt/';
     import OrderMgmtA from './routes/4OrderMgmt/PageA';
+        import OrderMgmtASubA from './routes/4OrderMgmt/PageASubA';
+        import OrderMgmtASubB from './routes/4OrderMgmt/PageASubB';
     import OrderMgmtB from './routes/4OrderMgmt/PageB';
+        import OrderMgmtBSubA from './routes/4OrderMgmt/PageBSubA';
     import OrderMgmtC from './routes/4OrderMgmt/PageC';
+        import OrderMgmtCSubA from './routes/4OrderMgmt/PageCSubA';
     import OrderMgmtD from './routes/4OrderMgmt/PageD';
+        import OrderMgmtDSubA from './routes/4OrderMgmt/PageDSubA';
 
 // 5库存管理
 import StockMgmt from './routes/5StockMgmt/';
@@ -41,6 +46,7 @@ import StockMgmt from './routes/5StockMgmt/';
     import StockMgmtB from './routes/5StockMgmt/PageB';
     import StockMgmtC from './routes/5StockMgmt/PageC';
     import StockMgmtD from './routes/5StockMgmt/PageD';
+        // import StockMgmtDCheck from './routes/5StockMgmt/PageDCheck';
     import StockMgmtE from './routes/5StockMgmt/PageE';
     import StockMgmtF from './routes/5StockMgmt/PageF';
         import StockMgmtFFormA from './routes/5StockMgmt/PageFFormA';
@@ -104,9 +110,14 @@ ReactDOM.render(
       <Route path="/ordermgmt" component={OrderMgmt}>
         <IndexRoute component={OrderMgmtA} />
         <Route path='/ordermgmta' component={OrderMgmtA} />
+            <Route path='/ordermgmta/ordermgmtasuba' component={OrderMgmtASubA} />
+            <Route path='/ordermgmta/ordermgmtasubb' component={OrderMgmtASubB} />
         <Route path='/ordermgmtb' component={OrderMgmtB} />
+            <Route path='/ordermgmtb/ordermgmtbsuba' component={OrderMgmtBSubA} />
         <Route path='/ordermgmtc' component={OrderMgmtC} />
+            <Route path='/ordermgmtc/ordermgmtcsuba' component={OrderMgmtCSubA} />
         <Route path='/ordermgmtd' component={OrderMgmtD} />
+            <Route path='/ordermgmtd/ordermgmtdsuba' component={OrderMgmtDSubA} />
       </Route>
 
       <Route path="/stockmgmt" component={StockMgmt}>
