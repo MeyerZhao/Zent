@@ -1,25 +1,21 @@
 import React from 'react'
-import { Link } from 'react-router';
 import { Button, Form } from 'antd';
-import { Tabs, Input, Select, Checkbox } from 'antd';
-import { Table, Icon } from 'antd';
+import { Input, Select, Checkbox } from 'antd';
+import { Table } from 'antd';
 const Option = Select.Option;
 const Search = Input.Search;
-const TabPane = Tabs.TabPane;
 const FormItem = Form.Item;
 
+
 const columns = [{
-  title: '打印机', dataIndex: 'item4', key: 'item4', }, {
-  title: '打印接机身号码', dataIndex: 'item5', key: 'item5', }, {
-  title: '打印机状态', dataIndex: 'item6', key: 'item6', }, {
+  title: '商品', dataIndex: 'item1', key: 'item1', render: (text, record)=>( 
+    <div style={{position:"relative"}}><img src="https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=2755178026,3344409706&fm=58" alt="鲜花" style={{width:"60px", height:"60px",float:"left"}} /> 
+    <div style={{marginLeft:"70"}}>卡罗拉（网）<br/> 20枝  <br/> A级,橙色,本地,多头</div></div>
+    ) }, {
+  title: 'SKU编号', dataIndex: 'item2', key: 'item2', }, {
   title: '操作', key: 'action', render: (text, record) => (
     <span>
-      <span className="ant-divider" />
-      <a href="">Delete</a>
-      <span className="ant-divider" />
-      <a href="" className="ant-dropdown-link">
-        More actions <Icon type="down" />
-      </a>
+      <a href="">加入分组</a>
     </span>
   ),
 }];
@@ -27,27 +23,8 @@ const columns = [{
 const data = [{
   key: '1',
   item1: 'John Brown',
-  item2: 'John Brown',
-  item3: 'John Brown',
-  item4: 'John Brown',
-  item5: 'John Brown',
-  item6: 'John Brown',
-}, {
-  key: '2',
-  item1: 'John Brown',
-  item2: 'John Brown',
-  item3: 'John Brown',
-  item4: 'John Brown',
-  item5: 'John Brown',
-  item6: 'John Brown',
-}, {
-  key: '3',
-  item1: 'John Brown',
-  item2: 'John Brown',
-  item3: 'John Brown',
-  item4: 'John Brown',
-  item5: 'John Brown',
-  item6: 'John Brown',
+  item2: '101050A1',
+  item3: '101050A1'
 }];
 
 // rowSelection object indicates the need for row selection
@@ -64,10 +41,7 @@ class index extends React.Component {
   render(){
     return (
     		<div>
-
     			<div className="mb10 searchbg" >
-              
-              
               <Form layout='inline' className="mb10">
               <FormItem label="">
                 <Search placeholder="输入搜索内容" onSearch={value => console.log(value)} />
@@ -98,28 +72,9 @@ class index extends React.Component {
                 <Button type="primary" >搜索</Button> 
               </FormItem>
             </Form>  
-
-            <div >
-                <Link to="/goodsmgmtb/goodsmgmtbsuba"><Button type="primary"  >系统商品库</Button></Link>
-                <Link to="/goodsmgmtb/goodsmgmtbforma"><Button type="primary" style={{marginLeft:"10px"}} >自定义商品</Button></Link>
-                <Select defaultValue="1" style={{marginLeft:"10px", width: 120 }} >
-                  <Option value="1">批量删除商品</Option>
-                  <Option value="2">批量下载条码</Option>
-                  <Option value="3">批量打印条码</Option>
-                </Select>
-              </div>
-    				
-
-
-
     			</div>
 
-	        <Tabs defaultActiveKey="1" tabPosition='left'>
-	          <TabPane tab="玫瑰" key="1">              
-              <Table columns={columns} dataSource={data} rowSelection={rowSelection} />
-            </TabPane>
-	          <TabPane tab="康乃馨" key="2">Content of Tab Pane 2</TabPane>
-	        </Tabs>
+          <Table columns={columns} dataSource={data} rowSelection={rowSelection} />
     		</div>
       )
   }

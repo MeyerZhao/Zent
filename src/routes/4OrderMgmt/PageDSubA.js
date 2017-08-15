@@ -46,13 +46,14 @@ class index extends React.Component {
         	<div style={{padding:"10px"}} className="mb20">
         		<div className="mb10">
 		        	<b {...btnLayout}>订单编号：517052012334556</b><span {...btnLayout}>已支付</span> 
-		        	<Button>订单操作按钮/确认订单/签收订单</Button>
+		        	<span {...btnLayout}>订单金额：100.00元</span>
+		        	<span {...btnLayout}>退款金额：100.00元</span>
         		</div>
 	      		<div className="mb10">
-	        		<Button {...btnLayout}>打印配货单</Button>
-	        		<Button {...btnLayout}>打印收货地址</Button>
-	        		<Button {...btnLayout}>追加物流信息</Button>
-	        		物流状态：配送中
+	      			<b>退款状态：待商家处理</b>
+	        		<Button {...btnLayout}>同一退款</Button>
+	        		<Button {...btnLayout}>修改退款金额</Button>
+	        		<Button {...btnLayout}>拒绝退款</Button>
 	        	</div>
 	        	<div className="mb10" style={{height:"28px", lineHeight:"28px"}}>
 	        		备忘信息：备忘旗帜颜色列表
@@ -66,11 +67,17 @@ class index extends React.Component {
 	        	</div>
 	        	<div>
 	        		<Input type="textarea" rows={6}></Input>
-	        		客户备注：一定要新鲜、发货要及时 谢谢！
 	        	</div>
 					</div>
 					
         	<div style={{padding:"10px"}}>
+      			<h3>退款说明</h3>
+      			<p className="mb10">有一枝花头短了，黄莺不新鲜。</p>
+      			<img {...btnLayout} src="https://img.yzcdn.cn/public_files/2017/3/18/cfe95d71fb06572a0e6c5504c357ea93.png" alt=""/>
+      			<img {...btnLayout} src="https://img.yzcdn.cn/public_files/2017/3/18/cfe95d71fb06572a0e6c5504c357ea93.png" alt=""/>
+      			<img {...btnLayout} src="https://img.yzcdn.cn/public_files/2017/3/18/cfe95d71fb06572a0e6c5504c357ea93.png" alt=""/>
+
+
         		<h3>收货信息</h3>
         		<Table columns={columns} dataSource={data} pagination={false} {...mb20}/>
 
@@ -78,14 +85,9 @@ class index extends React.Component {
         		<div className="mytable">
 	        		<h3>订单信息</h3>
 	        		<table style={{marginBottom:"30px", width:"100%"}}>
-	        				<tr><th>订单金额</th><td>#</td><th>优惠金额</th><td>#</td><th>实付金额</th><td>#</td><th>支付方式</th><td>#</td></tr>
-	        				<tr><th>下单时间</th><td>#</td><th>付款时间</th><td>#</td><th>配送时间</th><td>#</td><th>维权时间</th><td>#</td></tr>
-	        			
+	        				<tr><th>下单时间</th><td>#</td><th>确认时间</th><td>#</td><th>完成时间</th><td>#</td></tr>
 	        		</table>
         		</div>
-
-        		<h3>商品信息</h3>
-        		<Table columns={columns3}  pagination={false} bordered {...mb20}/>
 
 
         	</div>

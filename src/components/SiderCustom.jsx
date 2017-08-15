@@ -67,14 +67,14 @@ class SiderCustom extends Component {
             </div>
             <hr className="line" />
 
-                <Menu
+                <Menu className="menuitem"
                     style={{borderRight: "0px solid #e9e9e9"}}
                     onClick={this.menuClick}
                     mode='inline'
                     selectedKeys={[this.state.selectedKey]}
                 >
-                    <Menu.Item key="/">
-                      <Link to="/"> <span className="sidebar-icon">1工作台</span></Link>
+                    <Menu.Item key="/" >
+                      <Link to="/"> <span className="sidebar-icon sidebar-icon-workbench ">1工作台</span></Link>
                     </Menu.Item>
 
                     <Menu.Item key="/shopmgmt">
@@ -90,11 +90,11 @@ class SiderCustom extends Component {
                     </Menu.Item>
 
                     <Menu.Item key="/stockmgmt">
-                      <Link to="/stockmgmt"> <span className="sidebar-icon" >5库存管理</span> </Link>
+                      <Link to="/stockmgmt"> <span className="sidebar-icon sidebar-icon-stock" >5库存管理</span> </Link>
                     </Menu.Item>
 
                     <Menu.Item key="/customermgmt">
-                      <Link to="/customermgmt"> <span className="sidebar-icon" >6客户管理</span> </Link>
+                      <Link to="/customermgmt"> <span className="sidebar-icon sidebar-icon-guest" >6客户管理</span> </Link>
                     </Menu.Item>
 
                     <Menu.Item key="/assetsmgmt">
@@ -106,7 +106,7 @@ class SiderCustom extends Component {
                     </Menu.Item>
 
                      <Menu.Item key="/dataanalysis">
-                      <Link to="/dataanalysis"> <span className="sidebar-icon" >9数据分析</span> </Link>
+                      <Link to="/dataanalysis"> <span className="sidebar-icon sidebar-icon-data" >9数据分析</span> </Link>
                     </Menu.Item>
 
                 </Menu>

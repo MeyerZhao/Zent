@@ -55,7 +55,7 @@ class index extends React.Component {
             <Tabs activeId={this.state.activeId} onTabChange={this.onTabChange} >
               <TabPanel tab="已报价" id="1" >
                 <div className="mb10">
-                    <Button type="primary" >导出到Excel</Button> <Button type="primary"  outline >价格导入</Button>
+                    <Button >导出到Excel</Button> <Button >价格导入</Button>
                 </div>
                 <Table columns={columns} dataSource={data} />
               </TabPanel>

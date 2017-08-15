@@ -26,7 +26,10 @@ import ShopMgmt from './routes/2ShopMgmt/';
 import GoodsMgmt from './routes/3GoodsMgmt/';
     import GoodsMgmtA from './routes/3GoodsMgmt/PageA';
     import GoodsMgmtB from './routes/3GoodsMgmt/PageB';
+        import GoodsMgmtBFormA from './routes/3GoodsMgmt/PageBFormA';
+        import GoodsMgmtBSubA from './routes/3GoodsMgmt/PageBSubA';
     import GoodsMgmtC from './routes/3GoodsMgmt/PageC';
+        import GoodsMgmtCFormA from './routes/3GoodsMgmt/PageCFormA';
 
 // 4订单管理
 import OrderMgmt from './routes/4OrderMgmt/';
@@ -104,7 +107,10 @@ ReactDOM.render(
         <IndexRoute component={GoodsMgmtA} />
         <Route path="/goodsmgmta" component={GoodsMgmtA} />
         <Route path="/goodsmgmtb" component={GoodsMgmtB} />
+            <Route path="/goodsmgmtb/goodsmgmtbforma" component={GoodsMgmtBFormA} />
+            <Route path="/goodsmgmtb/goodsmgmtbsuba" component={GoodsMgmtBSubA} />
         <Route path="/goodsmgmtc" component={GoodsMgmtC} />
+            <Route path="/goodsmgmtc/goodsmgmtcforma" component={GoodsMgmtCFormA} />
       </Route>
 
       <Route path="/ordermgmt" component={OrderMgmt}>

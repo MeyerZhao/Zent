@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router';
 import { Table, Icon, Button } from 'antd';
 
 const columns = [{
@@ -28,7 +29,7 @@ class index extends React.Component {
       <div>
         <div className="mb10">
           <div style={{textAlign:"left"}}>
-            <Button type="primary" >新建分组</Button> 
+            <Link to="/goodsmgmtc/goodsmgmtcforma"><Button type="primary" >新建分组</Button> </Link>
           </div>
         </div>
 
