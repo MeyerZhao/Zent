@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router';
 import { Button, } from 'antd';
 import { Input, Select } from 'antd';
-import { Table, Icon } from 'antd';
+import { Table } from 'antd';
 import { Tabs } from 'zent';
 const TabPanel = Tabs.TabPanel;
 const Search = Input.Search;

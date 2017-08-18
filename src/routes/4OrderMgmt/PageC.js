@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router';
-import { Button, Input, Table, Icon } from 'antd';
+import { Button, Input, Table } from 'antd';
 import { Tabs } from 'zent';
 const TabPanel = Tabs.TabPanel;
 const Search = Input.Search;

@@ -1,6 +1,5 @@
 import React from 'react'
-import { Button, Select, Input, Table} from 'antd';
-const option = Select.option;
+import { Button, Table} from 'antd';
 
 const btnLayout= {
 		style: {marginRight:"10px"}

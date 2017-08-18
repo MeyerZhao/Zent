@@ -27,12 +27,6 @@ const data = [{
 
 
 
-const columns3 = [{
-  title: '商品信息', dataIndex: 'item1', key: 'item1', }, {
-  title: '单价', dataIndex: 'item2', key: 'item2', }, {
-  title: '数量', dataIndex: 'item3', key: 'item3', }, {
-  title: '小计', dataIndex: 'item4', key: 'item4', }, {
-  title: '订单编号', dataIndex: 'item5', key: 'item5', }];
 
 
 

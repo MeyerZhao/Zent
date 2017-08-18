@@ -16,12 +16,9 @@
     background-position: 50%;
 }
 .shopname{
-
     font-size: 14px;
 }
-.ant-menu-item{
-    font-size: 14px!important;
-}
+
 
 hr.line{
     margin: 10px 14px;
@@ -40,6 +37,7 @@ hr.line{
     cursor: pointer;
 }
 .sidebar-icon{
+    font-size: 14px;
     width: 24px;
     height: 24px;
     background: url(../image/icon.png) no-repeat;
