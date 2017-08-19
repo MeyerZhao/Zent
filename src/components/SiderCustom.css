@@ -1,7 +1,7 @@
 .logo{
     position:relative;
     border-radius: 6px;
-    margin: 16px;
+    margin: 25px 16px 16px;
     height: 40px;
 } 
 .avatar{
@@ -17,8 +17,17 @@
 }
 .shopname{
     font-size: 14px;
+    line-height: 14px;
+    margin-bottom: 8px;
 }
-
+.sider-tag{
+    background: rgb(204, 204, 204);
+    color: rgb(255, 255, 255);
+    padding: 0px 2px;
+    font-size: 12px;
+    line-height: 16px;
+    cursor: pointer;
+}
 
 hr.line{
     margin: 10px 14px;
@@ -26,6 +35,13 @@ hr.line{
     height: 1px;
     background: #eee;
 }
+hr.line2{
+    margin: 10px 0px;
+    border: 0px solid red;
+    height: 1px;
+    background: #eee;
+}
+
 .app-userinfo {
     position: fixed;
     padding: 16px 0;
@@ -89,4 +105,40 @@ hr.line{
 
 .menuitem li{
     margin-bottom: 12px
+}
+
+.app-userinfo__pop .zent-pop-inner {
+    padding: 0;
+    width: 145px;
+    color: #333;
+    font-size: 12px;
+}
+.app-userinfo__pop-hd {
+    padding: 10px 20px;
+    line-height: 24px;
+    background: #f8f8f8;
+    border-radius: 2px 0 0 2px;
+}
+.app-userinfo__pop-ft {
+    padding: 10px 0;
+    line-height: 30px;
+}
+.app-userinfo__pop-bd {
+    padding: 10px 0 0;
+    line-height: 30px;
+}
+
+.app-userinfo__pop-bd a, .app-userinfo__pop-ft a {
+    display: block;
+    color: #666;
+    padding: 0 20px;
+    line-height: 30px;
+    font-size: 12px;
+    transition-duration:0s;
+}
+
+.app-userinfo__pop-bd a:hover, .app-userinfo__pop-ft a:hover {
+    background: #38f;
+    color: #fff;
+    
 }

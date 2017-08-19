@@ -1,13 +1,14 @@
 /**
- * Created by hao.cheng on 2017/4/13.
+ * Created by  on 2017/4/13.
  */
 import React, { Component } from 'react';
 import { Layout, Menu } from 'antd';
 import { Link } from 'react-router';
+import { Pop, Button } from 'zent';
 import './SiderCustom.css';
 
+const trigger = 'hover';
 const { Sider } = Layout;
-
 
 class SiderCustom extends Component {
     state = {
@@ -48,6 +49,37 @@ class SiderCustom extends Component {
         })
     };
     render() {
+    const content = (
+        <div>
+            <p style={{ marginBottom: 10 }}>店铺未认证，无法进行交易，请尽快完成认证</p>
+            <Button type="danger">立即认证</Button>
+        </div>
+      );
+    const content2 = (
+        <div>
+            <p style={{ marginBottom: 10 }}>尚未订购有赞餐饮服务，店铺处于打烊状态</p>
+            <Button type="danger">立即认证</Button> <Button style={{borderColor:"transparent"}} type="primary" outline>订购记录</Button>
+            <hr className="line2"/>
+            <p style={{fontSize:"14px" }}>官方咨询电话：0571-85225188</p>
+        </div>
+      );
+    const content3 = (
+        <div>
+            <div className="app-userinfo__pop-hd">
+                <div>花集进货平台</div>
+                <div>18858568856</div>
+            </div>
+            <div className="app-userinfo__pop-bd">
+                <a href="">帐号设置</a>
+            </div>
+            <div className="app-userinfo__pop-bd">
+                <a href="">切换店铺</a>
+            </div>
+            <div className="app-userinfo__pop-ft">
+                <a href="">退出</a>
+            </div>
+        </div>
+      );
         return (
             <Sider
                 trigger={null}
@@ -61,8 +93,12 @@ class SiderCustom extends Component {
               <div className="avatar" ></div>
               <div style={{marginLeft: "50px"}}>
               <h4 className="shopname">黄焖鸡米饭文</h4>
-                未认证
-                有赞餐饮
+                <Pop trigger={trigger} position="bottom-left" content={content} >
+                  <div className="sider-tag" style={{marginRight:"5px"}}>未认证</div>
+                </Pop>
+                <Pop trigger={trigger} position="bottom-left" content={content2} >
+                  <div className="sider-tag" style={{marginRight:"5px"}}>有赞餐饮</div>
+                </Pop>
               </div>
             </div>
             <hr className="line" />
@@ -111,10 +147,13 @@ class SiderCustom extends Component {
 
                 </Menu>
 
-            <div className="app-userinfo">
-                <div className="app-userinfo-avatar"></div>
-                <div className="app-userinfo__phone">18858568856</div>
-            </div>
+                <Pop className="app-userinfo__pop" trigger={trigger} position="top" content={content3} >
+                    <div className="app-userinfo">
+                        <div className="app-userinfo-avatar"></div>
+                       <div className="app-userinfo__phone">18858568856</div>
+                    </div>
+                </Pop>
+               
         
             </Sider>
         )

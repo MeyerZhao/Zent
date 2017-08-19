@@ -26,6 +26,15 @@
 	margin-top: 20px;
 }
 
+.card-thumb__image{
+    position:absolute;
+    top:14px;
+    left:22px;
+    display: inline-block;
+    vertical-align: middle;
+    height: 40px;
+}
+
 .todo-item{
 	display: block;
 	padding: 0 12px;

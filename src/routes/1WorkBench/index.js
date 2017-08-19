@@ -5,6 +5,8 @@ import createG2 from 'g2-react';
 import './index.css';
 
 
+
+
 const Chart = createG2(chart => {
       chart.col('month', {
         alias: '日期',
@@ -164,7 +166,8 @@ class index extends React.Component {
 
                 <div style={{background:"#f8f8f8"}} className="mb20">
                   <div style={{height:"70px", position:"relative",padding:"10px", paddingLeft:"70px", display:" table-cell", verticalAlign: "middle"}}>
-                    <img style={{width:"44px", height:"44px", position:"absolute", top:"14px", left:"12px", background:"#d6d6d6"}} alt="图标"/>
+                    <img className="card-thumb__image"  alt="图标" src="https://img.yzcdn.cn/public_files/2017/3/18/470ab1557cf2560a6608aeabada4f8a6.png"/>
+                    
                     <h3>HUAXM批发微信小程序</h3>
                     <p>用手机随时随地管理店铺</p>
                   </div>
