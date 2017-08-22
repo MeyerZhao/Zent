@@ -4,6 +4,61 @@
 .main-inner{margin-right: 330px; min-height:30px}
 .extra { float:left; width:300px; min-height:30px; margin-left:-300px; }
 
+.info-list__item {
+    width: 100%;
+    display: inline-block;
+    overflow: hidden;
+    color: #666;
+    font-size: 12px;
+    line-height: 2;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.txt-red, .txt-red a:hover{
+    color: #d00
+}
+.info-list__header{
+    color: #333;
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+.icon-bg {
+    margin: auto;
+    width: 30px;
+    height: 30px;
+    background-image: url(http://img.yzcdn.cn/canyin/dashboard/status.png);
+    background-size: 30px;
+    background-repeat: no-repeat;
+}
+.icon-printer--open {
+    background-position: 0 0;
+}
+.icon-printer--close {
+    background-position: 0 -30px;
+}
+.icon-receive--open {
+    background-position: 0 -60px;
+}
+.icon-receive--close {
+    background-position: 0 -90px;
+}
+.icon-call--open {
+    background-position: 0 -120px;
+}
+.icon-call--close {
+    background-position: 0 -150px;
+}
+
+.setting-status{
+    text-decoration: none;
+    color: #666;
+}
+.status-text {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 12px;
+}
 .panel{
 	padding: 20px;
 }
@@ -134,4 +189,27 @@
     border-right-color: transparent;
     -webkit-transform: rotate(-59deg);
     transform: rotate(-59deg);
+}
+.img-qrcode{
+    background:url(../../image/u102.png);
+    background-size: 100%;
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    right: 0;
+    top: 0px;
+}
+
+.steps-content {
+  margin-top: 16px;
+  border: 1px dashed #e9e9e9;
+  border-radius: 6px;
+  background-color: #fafafa;
+  min-height: 200px;
+  text-align: center;
+  padding-top: 80px;
+}
+
+.steps-action {
+  margin-top: 24px;
 }

@@ -13,9 +13,18 @@ import WorkBench from './routes/1WorkBench/';
 import ShopMgmt from './routes/2ShopMgmt/';
     import ShopMgmtA from './routes/2ShopMgmt/PageA';
         import ShopMgmtAFormA from './routes/2ShopMgmt/PageAFormA';
+        import ShopMgmtAFormB from './routes/2ShopMgmt/PageAFormB';
+        import ShopMgmtAFormC from './routes/2ShopMgmt/PageAFormC';
 
     import ShopMgmtB from './routes/2ShopMgmt/PageB';
     import ShopMgmtC from './routes/2ShopMgmt/PageC';
+        import ShopMgmtCSubA from './routes/2ShopMgmt/PageCSubA';
+        import ShopMgmtCSubB from './routes/2ShopMgmt/PageCSubB';
+        import ShopMgmtCSubC from './routes/2ShopMgmt/PageCSubC';
+        import ShopMgmtCSubD from './routes/2ShopMgmt/PageCSubD';
+        import ShopMgmtCSubE from './routes/2ShopMgmt/PageCSubE';
+        import ShopMgmtCSubF from './routes/2ShopMgmt/PageCSubF';
+
     import ShopMgmtD from './routes/2ShopMgmt/PageD';
         import ShopMgmtDFormA from './routes/2ShopMgmt/PageDFormA';
 
@@ -93,10 +102,19 @@ ReactDOM.render(
       <Route path="/shopmgmt" component={ShopMgmt}>
         <IndexRoute component={ShopMgmtA} />
         <Route path="/shopmgmt/shopmgmta" component={ShopMgmtA} />
-          <Route path="/shopmgmt/shopmgmta/shopmgmtaforma" component={ShopMgmtAFormA} />
+            <Route path="/shopmgmt/shopmgmta/shopmgmtaforma" component={ShopMgmtAFormA} />
+            <Route path="/shopmgmt/shopmgmta/shopmgmtaformb" component={ShopMgmtAFormB} />
+            <Route path="/shopmgmt/shopmgmta/shopmgmtaformc" component={ShopMgmtAFormC} />
 
         <Route path="/shopmgmt/shopmgmtb" component={ShopMgmtB} />
         <Route path="/shopmgmt/shopmgmtc" component={ShopMgmtC} />
+            <Route path="/shopmgmt/shopmgmtcsuba" component={ShopMgmtCSubA} />
+            <Route path="/shopmgmt/shopmgmtcsubb" component={ShopMgmtCSubB} />
+            <Route path="/shopmgmt/shopmgmtcsubc" component={ShopMgmtCSubC} />
+            <Route path="/shopmgmt/shopmgmtcsubd" component={ShopMgmtCSubD} />
+            <Route path="/shopmgmt/shopmgmtcsube" component={ShopMgmtCSubE} />
+            <Route path="/shopmgmt/shopmgmtcsubf" component={ShopMgmtCSubF} />
+
         <Route path="/shopmgmt/shopmgmtd" component={ShopMgmtD} />
                 <Route path="/shopmgmt/shopmgmtdforma" component={ShopMgmtDFormA} />
         <Route path="/shopmgmt/shopmgmte" component={ShopMgmtE} />

@@ -22,8 +22,6 @@ class RegistrationForm extends React.Component {
     });
   }
 
-
-
   render() {
     const { getFieldDecorator } = this.props.form;
 

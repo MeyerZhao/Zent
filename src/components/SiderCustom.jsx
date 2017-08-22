@@ -110,39 +110,39 @@ class SiderCustom extends Component {
                     selectedKeys={[this.state.selectedKey]}
                 >
                     <Menu.Item key="/" >
-                      <Link to="/"> <span className="sidebar-icon sidebar-icon-workbench ">1工作台</span></Link>
+                      <Link to="/"> <span className="sidebar-icon sidebar-icon-workbench ">工作台</span></Link>
                     </Menu.Item>
 
                     <Menu.Item key="/shopmgmt">
-                      <Link to="/shopmgmt"> <span className="sidebar-icon sidebar-icon-shop" >2店铺管理</span> </Link>
+                      <Link to="/shopmgmt"> <span className="sidebar-icon sidebar-icon-shop" >店铺管理</span> </Link>
                     </Menu.Item>
 
                     <Menu.Item key="/goodsmgmt">
-                      <Link to="/goodsmgmt"> <span className="sidebar-icon sidebar-icon-goods" >3商品管理</span> </Link>
+                      <Link to="/goodsmgmt"> <span className="sidebar-icon sidebar-icon-goods" >商品管理</span> </Link>
                     </Menu.Item>
 
                     <Menu.Item key="/ordermgmt">
-                      <Link to="/ordermgmt"> <span className="sidebar-icon sidebar-icon-order" >4订单管理</span> </Link>
+                      <Link to="/ordermgmt"> <span className="sidebar-icon sidebar-icon-order" >订单管理</span> </Link>
                     </Menu.Item>
 
                     <Menu.Item key="/stockmgmt">
-                      <Link to="/stockmgmt"> <span className="sidebar-icon sidebar-icon-stock" >5库存管理</span> </Link>
+                      <Link to="/stockmgmt"> <span className="sidebar-icon sidebar-icon-stock" >库存管理</span> </Link>
                     </Menu.Item>
 
                     <Menu.Item key="/customermgmt">
-                      <Link to="/customermgmt"> <span className="sidebar-icon sidebar-icon-guest" >6客户管理</span> </Link>
+                      <Link to="/customermgmt"> <span className="sidebar-icon sidebar-icon-guest" >客户管理</span> </Link>
                     </Menu.Item>
 
                     <Menu.Item key="/assetsmgmt">
-                      <Link to="/assetsmgmt"> <span className="sidebar-icon sidebar-icon-asset" >7资产管理</span> </Link>
+                      <Link to="/assetsmgmt"> <span className="sidebar-icon sidebar-icon-asset" >资产管理</span> </Link>
                     </Menu.Item>
 
                      <Menu.Item key="/appplugin">
-                      <Link to="/appplugin"> <span className="sidebar-icon sidebar-icon-plugin" >8应用插件</span> </Link>
+                      <Link to="/appplugin"> <span className="sidebar-icon sidebar-icon-plugin" >应用插件</span> </Link>
                     </Menu.Item>
 
                      <Menu.Item key="/dataanalysis">
-                      <Link to="/dataanalysis"> <span className="sidebar-icon sidebar-icon-data" >9数据分析</span> </Link>
+                      <Link to="/dataanalysis"> <span className="sidebar-icon sidebar-icon-data" >数据分析</span> </Link>
                     </Menu.Item>
 
                 </Menu>
