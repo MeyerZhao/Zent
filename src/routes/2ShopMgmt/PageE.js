@@ -6,7 +6,7 @@ import { Link } from 'react-router';
 
 const columns = [{
   title: '打印机', dataIndex: 'item4', key: 'item4', }, {
-  title: '打印接机身号码', dataIndex: 'item5', key: 'item5', }, {
+  title: '打印机机身号码（SN）', dataIndex: 'item5', key: 'item5', }, {
   title: '打印机状态', dataIndex: 'item6', key: 'item6', }, {
   title: '操作', key: 'action', render: (text, record) => (
     <span>
@@ -20,31 +20,8 @@ const columns = [{
   ),
 }];
 
-const data = [{
-  key: '1',
-	item1: 'John Brown',
-	item2: 'John Brown',
-	item3: 'John Brown',
-	item4: 'John Brown',
-	item5: 'John Brown',
-	item6: 'John Brown',
-}, {
-  key: '2',
-  item1: 'John Brown',
-  item2: 'John Brown',
-  item3: 'John Brown',
-  item4: 'John Brown',
-  item5: 'John Brown',
-  item6: 'John Brown',
-}, {
-  key: '3',
-  item1: 'John Brown',
-  item2: 'John Brown',
-  item3: 'John Brown',
-  item4: 'John Brown',
-  item5: 'John Brown',
-  item6: 'John Brown',
-}];
+const data = [];
+
 class index extends React.Component {
   render(){
     return (

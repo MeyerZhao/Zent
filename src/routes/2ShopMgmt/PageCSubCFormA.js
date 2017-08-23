@@ -16,15 +16,7 @@ const columns = [{
   ),
 }];
 
-const data = [{
-  key: '1',
-  item1: '13989456668',
-  item2: '张胜男',
-  item3: '13989456668',
-  item4: '1866812121',
-  item5: '高级管理员',
-  item6: '2017-8-23 09:50:00',
-}];
+const data = [];
 
 class index extends React.Component {
   render(){

@@ -20,6 +20,7 @@ import ShopMgmt from './routes/2ShopMgmt/';
     import ShopMgmtC from './routes/2ShopMgmt/PageC';
         import ShopMgmtCSubA from './routes/2ShopMgmt/PageCSubA';
         import ShopMgmtCSubB from './routes/2ShopMgmt/PageCSubB';
+            import ShopMgmtCSubBFormA from './routes/2ShopMgmt/PageCSubBFormA';
         import ShopMgmtCSubC from './routes/2ShopMgmt/PageCSubC';
         import ShopMgmtCSubD from './routes/2ShopMgmt/PageCSubD';
         import ShopMgmtCSubE from './routes/2ShopMgmt/PageCSubE';
@@ -110,6 +111,7 @@ ReactDOM.render(
         <Route path="/shopmgmt/shopmgmtc" component={ShopMgmtC} />
             <Route path="/shopmgmt/shopmgmtcsuba" component={ShopMgmtCSubA} />
             <Route path="/shopmgmt/shopmgmtcsubb" component={ShopMgmtCSubB} />
+                <Route path="/shopmgmt/shopmgmtcsubbforma" component={ShopMgmtCSubBFormA} />
             <Route path="/shopmgmt/shopmgmtcsubc" component={ShopMgmtCSubC} />
             <Route path="/shopmgmt/shopmgmtcsubd" component={ShopMgmtCSubD} />
             <Route path="/shopmgmt/shopmgmtcsube" component={ShopMgmtCSubE} />

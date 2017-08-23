@@ -7,9 +7,7 @@ const options1 = [
   { label: '1张', value: '1张' },
   { label: '2张', value: '2张' },
 ];
-const options2 = [
-  { label: '外卖订单', value: '外卖订单' },
-];
+
 const RadioGroup = Radio.Group;
 const FormItem = Form.Item;
 
@@ -102,16 +100,9 @@ class RegistrationForm extends React.Component {
             <RadioGroup options={options1} onChange={this.onChange1} value={this.state.value1} />
         </FormItem>
 
-        <FormItem
-          {...formItemLayout}
-          label="打印支持"
-          hasFeedback
-        >
-            <RadioGroup options={options2} onChange={this.onChange2} value={this.state.value2} />
-        </FormItem>
    
         <FormItem {...tailFormItemLayout}>
-          <Button type="primary" htmlType="submit" size="large">确定提交</Button>
+          <Button type="primary" htmlType="submit" size="large">保存</Button>
         </FormItem>
       </Form>
     );

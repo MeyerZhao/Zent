@@ -3,8 +3,8 @@ import { Table, Button } from 'antd';
 import { Link } from 'react-router';
 
 const columns = [{
-  title: 'HUAXM账号', dataIndex: 'item1', key: 'item1', render: text => <a href="">{text}</a>, }, {
-  title: '员工姓名', dataIndex: 'item2', key: 'item2', }, {
+  title: '管理员账号', dataIndex: 'item1', key: 'item1', render: text => <a href="">{text}</a>, }, {
+  title: '姓名', dataIndex: 'item2', key: 'item2', }, {
   title: '联系方式', dataIndex: 'item3', key: 'item3', }, {
   title: '添加人', dataIndex: 'item4', key: 'item4', }, {
   title: '赋予权限', dataIndex: 'item5', key: 'item5', }, {
@@ -20,28 +20,12 @@ const columns = [{
 
 const data = [{
   key: '1',
-  item1: 'John Brown',
-  item2: 'John Brown',
-  item3: 'John Brown',
-  item4: 'John Brown',
-  item5: 'John Brown',
-  item6: 'John Brown',
-}, {
-  key: '2',
-  item1: 'John Brown',
-  item2: 'John Brown',
-  item3: 'John Brown',
-  item4: 'John Brown',
-  item5: 'John Brown',
-  item6: 'John Brown',
-}, {
-  key: '3',
-  item1: 'John Brown',
-  item2: 'John Brown',
-  item3: 'John Brown',
-  item4: 'John Brown',
-  item5: 'John Brown',
-  item6: 'John Brown',
+  item1: '13989456668',
+  item2: '张胜男',
+  item3: '13989456668',
+  item4: '1866812121',
+  item5: '高级管理员',
+  item6: '2017-8-23 09:50:00',
 }];
 
 class index extends React.Component {

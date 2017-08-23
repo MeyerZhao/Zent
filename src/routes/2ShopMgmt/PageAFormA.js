@@ -59,7 +59,7 @@ class RegistrationForm extends React.Component {
 
 
     return (
-      <Form onSubmit={this.handleSubmit} style={{width:"540px"}}>
+      <Form onSubmit={this.handleSubmit} style={{width:"600px"}}>
       	<FormItem
       	  {...formItemLayout}
       	  label="店铺名称"
