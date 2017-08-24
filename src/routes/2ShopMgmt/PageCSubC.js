@@ -36,7 +36,7 @@ class index extends React.Component {
 	       	</Breadcrumb>
           <h4 className="block-title mb10" >店铺公告</h4>
 	       	<div className="mb10">
-             <Link to="/shopmgmt/shopmgmtcsubbforma"><Button type="primary" >添加公告</Button></Link>
+             <Link to="/shopmgmt/shopmgmtcsubcforma"><Button type="primary" >添加公告</Button></Link>
           </div>
           <Table columns={columns} dataSource={data} />
        </div>

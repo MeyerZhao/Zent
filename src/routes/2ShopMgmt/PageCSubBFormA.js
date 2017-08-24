@@ -1,5 +1,5 @@
 import React from 'react';
-import { Form, Input, Cascader, Select, Button, Checkbox } from 'antd';
+import { Form, Input, Cascader, Button, Checkbox } from 'antd';
 import city from '../../utils/city'
 const CheckboxGroup = Checkbox.Group;
 const FormItem = Form.Item;

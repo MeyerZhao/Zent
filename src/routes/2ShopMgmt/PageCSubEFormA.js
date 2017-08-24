@@ -1,5 +1,8 @@
 import React from 'react';
-import { Form, Input, Button} from 'antd';
+import { Form, Input, Cascader, Select, Button, DatePicker} from 'antd';
+import city from '../../utils/city'
+
+const { RangePicker } = DatePicker;
 const FormItem = Form.Item;
 class RegistrationForm extends React.Component {
 
@@ -37,19 +40,39 @@ class RegistrationForm extends React.Component {
 
     return (
       <Form onSubmit={this.handleSubmit} style={{width:"600px"}}>
-        <FormItem
-          {...formItemLayout}
-          label="公告标题"
-          hasFeedback
-        >
-          <Input></Input>
+        <FormItem {...formItemLayout} label="名称"hasFeedback > <Input /> </FormItem>
+        <FormItem {...formItemLayout} label="联系电话"hasFeedback > <Input /> </FormItem>
+        <FormItem {...formItemLayout} label="所属区域"hasFeedback > 
+            <Cascader
+              size="large"
+              style={{ width: '100%' }}
+              options={city}
+              placeholder="请选择地址！"
+              changeOnSelect
+            />
         </FormItem>
         <FormItem
           {...formItemLayout}
-          label="公告内容"
+          label="详细地址"
           hasFeedback
         >
-          <Input type="textarea"/>
+          <Input />
+        </FormItem>
+        <FormItem
+          {...formItemLayout}
+          label="地图定位"
+          hasFeedback
+        >
+          <div>
+            地图
+          </div>
+        </FormItem>
+        <FormItem
+          {...formItemLayout}
+          label="营业时间"
+          hasFeedback
+        >
+          <RangePicker showTime format="YYYY-MM-DD HH:mm:ss" />
         </FormItem>
      
    
@@ -71,7 +94,7 @@ class index extends React.Component {
       <div >
 
         <div className="mb20">
-          <h3 className="block-title mb20">编辑店铺公告</h3>
+          <h3 className="block-title mb20">编辑自提点</h3>
           <WrappedRegistrationForm  />
         </div>
 
