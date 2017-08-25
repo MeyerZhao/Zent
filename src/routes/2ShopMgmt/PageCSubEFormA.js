@@ -1,5 +1,5 @@
 import React from 'react';
-import { Form, Input, Cascader, Select, Button, DatePicker} from 'antd';
+import { Form, Input, Cascader, Button, DatePicker} from 'antd';
 import city from '../../utils/city'
 
 const { RangePicker } = DatePicker;

@@ -87,3 +87,9 @@ body {
     padding: 15px 20px;
 
 }
+
+.table-infor{
+  float: right;
+  margin-top: 10px;
+  font-size: 14px;
+}

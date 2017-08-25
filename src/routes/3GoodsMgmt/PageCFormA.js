@@ -46,9 +46,6 @@ class RegistrationForm extends React.Component {
       },
     };
 
-
-
-
     return (
       <Form onSubmit={this.handleSubmit} style={{width:"540px"}}>
         <FormItem

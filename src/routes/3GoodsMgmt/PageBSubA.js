@@ -1,10 +1,14 @@
 import React from 'react'
-import { Button, Form } from 'antd';
-import { Input, Select, Checkbox } from 'antd';
+import { Link } from 'react-router'
+import { Button, Form, Select } from 'antd';
+import { Input, Checkbox, Breadcrumb } from 'antd';
 import { Table } from 'antd';
+import { Tabs} from 'zent'
+const TabPanel = Tabs.TabPanel;
 const Option = Select.Option;
 const Search = Input.Search;
 const FormItem = Form.Item;
+
 
 
 const columns = [{
@@ -27,24 +31,27 @@ const data = [{
   item3: '101050A1'
 }];
 
-// rowSelection object indicates the need for row selection
-const rowSelection = {
-  onChange: (selectedRowKeys, selectedRows) => {
-    console.log(`selectedRowKeys: ${selectedRowKeys}`, 'selectedRows: ', selectedRows);
-  },
-  getCheckboxProps: record => ({
-    disabled: record.name === 'Disabled User',    // Column configuration not to be checked
-  }),
-};
 
 class index extends React.Component {
+  state = {
+    activeId: '1',
+  }
+  onTabChange = (id) =>{
+    this.setState({
+      activeId: id
+    });
+  }
   render(){
     return (
     		<div>
-    			<div className="mb10 searchbg" >
+          <Breadcrumb className="mb20">
+             <Breadcrumb.Item><Link to="/goodsmgmtb">商品管理</Link></Breadcrumb.Item>
+             <Breadcrumb.Item>系统商品库</Breadcrumb.Item>
+          </Breadcrumb>
+    			<div className="mb10 searchbg"  style={{marginTop:"0"}}>
               <Form layout='inline' className="mb10">
               <FormItem label="">
-                <Search placeholder="输入搜索内容" onSearch={value => console.log(value)} />
+                <Search placeholder="商品/SKU编号" onSearch={value => console.log(value)} />
               </FormItem>
               <FormItem label="所属分组">
                 <Select defaultValue="商品分组" style={{  width: 120 }} >
@@ -74,7 +81,26 @@ class index extends React.Component {
             </Form>  
     			</div>
 
-          <Table columns={columns} dataSource={data} rowSelection={rowSelection} />
+          <Tabs activeId={this.state.activeId} onTabChange={this.onTabChange} >
+            <TabPanel tab="所有" id="1" >
+              <div className="mb10">
+                <Select placeholder="批量操作" style={{ width: 120 }} >
+                  <option value="批量操作">批量操作</option>
+                  <option value="批量确认">批量确认</option>
+                  <option value="批量发货">批量发货</option>
+                  <option value="批量签收">批量签收</option>
+                  <option value="批量打印配货单">批量打印配货单</option>
+                </Select>
+              </div>
+              <Table columns={columns} dataSource={data} />
+            </TabPanel>
+            <TabPanel tab="玫瑰"id="2"> <div>选项二的内容</div> </TabPanel> 
+            <TabPanel tab="康乃馨"id="3"> <div>选项三的内容</div> </TabPanel>
+            <TabPanel tab="百合"id="4"> <div>选项三的内容</div> </TabPanel>
+            <TabPanel tab="分组二"id="5"> <div>选项三的内容</div> </TabPanel>
+            <TabPanel tab="分组三"id="6"> <div>选项三的内容</div> </TabPanel>
+          </Tabs>
+
     		</div>
       )
   }

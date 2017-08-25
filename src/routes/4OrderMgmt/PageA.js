@@ -5,6 +5,7 @@ import { Input, Select, Cascader } from 'antd';
 import { Table, DatePicker } from 'antd';
 import { Tabs } from 'zent';
 import city from '../../utils/city'
+import PageAMore from './PageAMore.js'
 
 
 const { RangePicker } = DatePicker;
@@ -144,7 +145,7 @@ class index extends React.Component {
                       <option value="批量打印配货单">批量打印配货单</option>
                     </Select>               
                     <Link to="/ordermgmta/ordermgmtasuba" target="_blank"><Button>商品统计</Button></Link> <Button >EXCEL导出</Button>
-                    <span style={{float:"right", marginTop:"10px", fontSize:"12px" }}>
+                    <span className="table-infor" >
                       订单数11 （待确认0、待配送2、维权中0 ) ，客户数10，订单金额200.00
                     </span>
                   </div>
@@ -157,7 +158,7 @@ class index extends React.Component {
               <TabPanel tab="8月12日" id="6"> <div>选项三的内容</div> </TabPanel>
               <TabPanel tab="8月11日 " id="7"> <div>选项三的内容</div> </TabPanel>
               <TabPanel tab="8月10日 " id="8"> <div>选项三的内容</div> </TabPanel>
-              <TabPanel tab="更多 " id="9"> <div>选项三的内容</div> </TabPanel>
+              <TabPanel tab="更多 " id="9"> <div><PageAMore /></div> </TabPanel>
             </Tabs>
           </div>
 

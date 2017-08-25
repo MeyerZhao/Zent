@@ -1,25 +1,58 @@
 import React from 'react'
 import { Link } from 'react-router';
 import { Button, Form } from 'antd';
-import { Tabs, Input, Select, Checkbox } from 'antd';
-import { Table, Icon } from 'antd';
+import { Input, Select, Checkbox } from 'antd';
+import { Table } from 'antd';
+import { Tabs, Pop } from 'zent';
+const TabPanel = Tabs.TabPanel;
 const Option = Select.Option;
-const Search = Input.Search;
-const TabPane = Tabs.TabPane;
 const FormItem = Form.Item;
+const content = (
+    <div style={{lineHeight:"30px", padding:"10px 20px"}}>
+      <div >
+          <p ><Checkbox >主食</Checkbox></p>
+          <p ><Checkbox >热菜</Checkbox></p>
+          <p ><Checkbox >冷菜</Checkbox></p>
+          <p ><Checkbox >饮料</Checkbox></p>
+      </div>
+      <div style={{paddingTop:"5px", borderTop:"1px solid #ddd"}}>
+          <button type="button" className="zent-btn-primary zent-btn-small zent-btn">保存</button><button type="button" className="zent-btn-small zent-btn">取消</button>
+      </div>
+    </div>
+  );
+const children = [
+      <option value="1">全部状态</option>,
+      <option value="2">待支付</option>,
+      <option value="3">待确认</option>,
+      <option value="4">待配送</option>,
+      <option value="5">已签收</option>,
+      <option value="6">待转账</option>,
+      <option value="7">维权中</option>,
+      <option value="8">交易关闭</option>,
+      <option value="9">交易成功</option>,
+];
 
 const columns = [{
-  title: '打印机', dataIndex: 'item4', key: 'item4', }, {
-  title: '打印接机身号码', dataIndex: 'item5', key: 'item5', }, {
-  title: '打印机状态', dataIndex: 'item6', key: 'item6', }, {
+  title: '商品', dataIndex: 'item1', key: 'item1', render: (text, record)=>( 
+    <div style={{position:"relative"}}><img src="https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=2755178026,3344409706&fm=58" alt="鲜花" style={{width:"60px", height:"60px",float:"left"}} /> 
+    <div style={{marginLeft:"70"}}>卡罗拉（网）<br/> 20枝  <br/> A级,橙色,本地,多头</div></div>
+    ) }, {
+  title: 'SKU编号', dataIndex: 'item2', key: 'item2', }, {
+  title: '来源', dataIndex: 'item3', key: 'item3', }, {
+  title: '所属分组', dataIndex: 'item4', key: 'item4', }, {
+  title: '总销量', dataIndex: 'item5', key: 'item5', }, {
+  title: '排序', dataIndex: 'item6', key: 'item6', }, {
   title: '操作', key: 'action', render: (text, record) => (
     <span>
+      <Link to="/goodsmgmtb/goodsmgmtbforma">编辑</Link>
       <span className="ant-divider" />
-      <a href="">Delete</a>
+      <Pop className="app-userinfo__pop2" trigger="click" position="left-top" content={content} >
+        <a >改分组</a>
+      </Pop>
       <span className="ant-divider" />
-      <a href="" className="ant-dropdown-link">
-        More actions <Icon type="down" />
-      </a>
+      <Pop trigger="click"  type="danger"  position="top-center" content="确定删除？" confirmText="确定" cancelText="关闭" onConfirm>
+        <a >删除</a>
+      </Pop>
     </span>
   ),
 }];
@@ -32,94 +65,68 @@ const data = [{
   item4: 'John Brown',
   item5: 'John Brown',
   item6: 'John Brown',
-}, {
-  key: '2',
-  item1: 'John Brown',
-  item2: 'John Brown',
-  item3: 'John Brown',
-  item4: 'John Brown',
-  item5: 'John Brown',
-  item6: 'John Brown',
-}, {
-  key: '3',
-  item1: 'John Brown',
-  item2: 'John Brown',
-  item3: 'John Brown',
-  item4: 'John Brown',
-  item5: 'John Brown',
-  item6: 'John Brown',
 }];
 
-// rowSelection object indicates the need for row selection
-const rowSelection = {
-  onChange: (selectedRowKeys, selectedRows) => {
-    console.log(`selectedRowKeys: ${selectedRowKeys}`, 'selectedRows: ', selectedRows);
-  },
-  getCheckboxProps: record => ({
-    disabled: record.name === 'Disabled User',    // Column configuration not to be checked
-  }),
-};
+
 
 class index extends React.Component {
+  state = {
+    activeId: '1',
+  }
+  onTabChange = (id) =>{
+    this.setState({
+      activeId: id
+    });
+  }
   render(){
     return (
     		<div>
 
     			<div className="mb10 searchbg" >
-              
-              
-              <Form layout='inline' className="mb10">
+            <Form layout='inline'>
               <FormItem label="">
-                <Search placeholder="输入搜索内容" onSearch={value => console.log(value)} />
+                <Input placeholder="商品/SKU编号" />
               </FormItem>
-              <FormItem label="所属分组">
-                <Select defaultValue="商品分组" style={{  width: 120 }} >
+              <FormItem label="">
+                <Select defaultValue="所有分组" style={{  width: 120 }} >
                   <Option value="分组1">分组1</Option>
                   <Option value="分组2">分组2</Option>
                   <Option value="分组3">分组3</Option>
                 </Select>
               </FormItem>
-              <FormItem label="颜色" className='formitemlabel'>
-                <Checkbox >颜色1</Checkbox>
-                <Checkbox >颜色2</Checkbox>
-                <Checkbox >颜色3</Checkbox>
-              </FormItem>
-              <FormItem label="等级" className='formitemlabel'>
-                <Checkbox >等级1</Checkbox>
-                <Checkbox >等级2</Checkbox>
-                <Checkbox >等级3</Checkbox>
-              </FormItem>
-              <FormItem label="产地" className='formitemlabel'>
-                <Checkbox >产地1</Checkbox>
-                <Checkbox >产地2</Checkbox>
-                <Checkbox >产地3</Checkbox>
+              <FormItem >
+                <Select
+                   mode="tags"
+                   placeholder="商品属性"
+                   style={{ minWidth: "150px" }}
+                 >
+                   {children}
+                 </Select>
               </FormItem>
               <FormItem >
-                <Button type="primary" >搜索</Button> 
+                <Button type="primary"  style={{marginRight:"10px"}}>搜索</Button> 
+                <Button >重置</Button> 
               </FormItem>
             </Form>  
 
-            <div >
-                <Link to="/goodsmgmtb/goodsmgmtbsuba"><Button type="primary"  >系统商品库</Button></Link>
-                <Link to="/goodsmgmtb/goodsmgmtbforma"><Button type="primary" style={{marginLeft:"10px"}} >自定义商品</Button></Link>
-                <Select defaultValue="1" style={{marginLeft:"10px", width: 120 }} >
-                  <Option value="1">批量删除商品</Option>
-                  <Option value="2">批量下载条码</Option>
-                  <Option value="3">批量打印条码</Option>
-                </Select>
-              </div>
-    				
-
-
-
     			</div>
+          <div className="mb10">
+            <Tabs activeId={this.state.activeId} onTabChange={this.onTabChange} >
+              <TabPanel tab="所有" id="1" >
+                <div className="mb10">
+                  <Link to="/goodsmgmtb/goodsmgmtbsuba"><Button >系统商品库</Button></Link>
+                  <Link to="/goodsmgmtb/goodsmgmtbforma"><Button style={{marginLeft:"10px"}} >自定义商品</Button></Link>
+                </div>
+                <Table columns={columns} dataSource={data} />
+              </TabPanel>
+              <TabPanel tab="玫瑰"id="2"> <div>选项二的内容</div> </TabPanel> 
+              <TabPanel tab="康乃馨"id="3"> <div>选项三的内容</div> </TabPanel>
+              <TabPanel tab="百合"id="4"> <div>选项三的内容</div> </TabPanel>
+              <TabPanel tab="分组二"id="5"> <div>选项三的内容</div> </TabPanel>
+              <TabPanel tab="分组三"id="6"> <div>选项三的内容</div> </TabPanel>
+            </Tabs>
+          </div>
 
-	        <Tabs defaultActiveKey="1" tabPosition='left'>
-	          <TabPane tab="玫瑰" key="1">              
-              <Table columns={columns} dataSource={data} rowSelection={rowSelection} />
-            </TabPane>
-	          <TabPane tab="康乃馨" key="2">Content of Tab Pane 2</TabPane>
-	        </Tabs>
     		</div>
       )
   }

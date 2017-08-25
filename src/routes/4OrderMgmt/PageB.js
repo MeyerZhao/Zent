@@ -87,7 +87,7 @@ class index extends React.Component {
                     <option value="批量发货">批量发货</option>
                   </Select>               
                   <Button >商品统计</Button>
-                  <span style={{float:"right", marginTop:"10px", fontSize:"12px" }}>
+                  <span className="table-infor">
                     客户数：10   订单数：11     订单金额：200.00  商品数：222
                   </span>
                 </div>

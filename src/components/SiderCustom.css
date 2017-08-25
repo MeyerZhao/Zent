@@ -113,6 +113,11 @@ hr.line2{
     color: #333;
     font-size: 12px;
 }
+.app-userinfo__pop2 .zent-pop-inner {
+    padding: 0;
+    color: #333;
+    font-size: 12px;
+}
 .app-userinfo__pop-hd {
     padding: 10px 20px;
     line-height: 24px;

@@ -57,7 +57,7 @@ class index extends React.Component {
         <div style={{padding:"20px 30px"}}>
           <div className="mb10">
           	<Link to="/assetsmgmtb/assetsmgmtbforma"><Button type="primary" >新建白条账户</Button></Link>
-            <span style={{float:"right", marginTop:"10px"}}>
+            <span className="table-infor">
             	订单数：11  客户数：10   订单金额：200.00  商品数：123
             </span>
           </div>

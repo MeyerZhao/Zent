@@ -1,32 +1,29 @@
 import React from 'react'
 import { Button, } from 'antd';
-import { Table, Icon } from 'antd';
-import { Input } from 'antd';
-import { Select } from 'antd';
+import { Table, Input, Select } from 'antd';
 import { Tabs } from 'zent';
 const TabPanel = Tabs.TabPanel;
 const Option = Select.Option;
-const Search = Input.Search;
 const columns = [{
-  title: '打印机', dataIndex: 'item4', key: 'item4', }, {
-  title: '打印接机身号码', dataIndex: 'item5', key: 'item5', }, {
-  title: '打印机状态', dataIndex: 'item6', key: 'item6', }, {
-  title: '操作', key: 'action', render: (text, record) => (
+  title: '商品', dataIndex: 'item1', key: 'item1', }, {
+  title: 'SKU编号', dataIndex: 'item2', key: 'item2', }, {
+  title: '属性值', dataIndex: 'item3', key: 'item3', }, {
+  title: '所属分组', dataIndex: 'item4', key: 'item4', }, {
+  title: '报价', dataIndex: 'item5', key: 'item5', }, {
+  title: '库存', dataIndex: 'item6', key: 'item6', }, {
+  title: '最小订购', dataIndex: 'item7', key: 'item7', }, {
+  title: '操作记录', key: 'action', render: (text, record) => (
     <span>
+      admin
       <span className="ant-divider" />
-      <a href="">Delete</a>
-      <span className="ant-divider" />
-      <a href="" className="ant-dropdown-link">
-        More actions <Icon type="down" />
-      </a>
+      2017-8-25 10:31:06
     </span>
   ),
 }];
 
 const data = [{
-  key: '1', item1: 'John Brown', item2: 'John Brown', item3: 'John Brown', item4: 'John Brown', item5: 'John Brown', item6: 'John Brown', }, {
-  key: '2', item1: 'John Brown', item2: 'John Brown', item3: 'John Brown', item4: 'John Brown', item5: 'John Brown', item6: 'John Brown', }, {
-  key: '3', item1: 'John Brown', item2: 'John Brown', item3: 'John Brown', item4: 'John Brown', item5: 'John Brown', item6: 'John Brown', }];
+  key: '1', item1: 'John Brown', item2: 'John Brown', item3: 'John Brown', item4: 'John Brown', item5: 'John Brown', item6: 'John Brown', item7: 'John Brown' }, {
+  key: '1', item1: 'John Brown', item2: 'John Brown', item3: 'John Brown', item4: 'John Brown', item5: 'John Brown', item6: 'John Brown', item7: 'John Brown' }]; 
 
 
 class index extends React.Component {
@@ -42,7 +39,7 @@ class index extends React.Component {
     return (
         <div>
           <div className="mb10 searchbg" >
-            <Search placeholder="输入搜索内容"style={{ marginRight:"10px", width: 200 }} onSearch={value => console.log(value)} />
+            <Input placeholder="商品/SKU编号" style={{ marginRight:"10px", width: 200 }} />
             <Select defaultValue="全部分组" style={{ marginRight:"10px", width: 200 }} >
               <Option value="1">分组一</Option>
               <Option value="2">分组二</Option>

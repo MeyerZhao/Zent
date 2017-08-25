@@ -72,22 +72,6 @@ const data = [{
   item4: 'John Brown',
   item5: 'John Brown',
   item6: 'John Brown',
-}, {
-  key: '2',
-  item1: 'John Brown',
-  item2: 'John Brown',
-  item3: 'John Brown',
-  item4: 'John Brown',
-  item5: 'John Brown',
-  item6: 'John Brown',
-}, {
-  key: '3',
-  item1: 'John Brown',
-  item2: 'John Brown',
-  item3: 'John Brown',
-  item4: 'John Brown',
-  item5: 'John Brown',
-  item6: 'John Brown',
 }];
 
 class index extends React.Component {
@@ -139,7 +123,7 @@ class index extends React.Component {
 
         <div style={{padding:"0 20px 20px"}}>
           <Tabs activeId={this.state.activeId} onTabChange={this.onTabChange} >
-            <TabPanel tab="手指明细" id="1">
+            <TabPanel tab="收支明细" id="1">
                 <div className="mb20 mt20">
                   <DateRangePicker2
                     showTime
@@ -149,21 +133,26 @@ class index extends React.Component {
                   />
                   <Button style={{marginLeft:"10px"}}>近7天</Button>
                   <Button style={{marginLeft:"10px"}}>近30天</Button>
-                  <Button style={{marginLeft:"10px"}}>近30天</Button>
                   <span style={{marginLeft:"10px"}}>
                     <Select defaultValue="全部" style={{ width: 120 }} >
                       <Option value="全部">全部</Option>
-                      <Option value="订单入账">订单入账</Option>
-                      <Option value="提现">提现</Option>
-                      <Option value="返现">返现</Option>
-                      <Option value="返现退回">返现退回</Option>
+                      <Option value="订单收入">订单收入</Option>
+                      <Option value="订单支出">订单支出</Option>
                       <Option value="退款">退款</Option>
+                      <Option value="充值">充值</Option>
+                      <Option value="提现">提现</Option>
+                      <Option value="保证金转移">保证金转移</Option>
                       <Option value="交易手续费">交易手续费</Option>
-                      <Option value="交易补贴">交易补贴</Option>
                     </Select>
                   </span>
                 </div>
                 <Table columns={columns} dataSource={data} />
+                <p style={{fontSize:"12px"}}>您的店铺产生的订单， 需要承担微信
+                支付宝
+                银行机构等支付通道商收取0.6%交易手续费，<b>花秘</b>不加收手续费<br/>
+                  线上订单将在您发货后7天内结算； 顾客扫码买单的订单， 将在顾客支付成功后立即结算<br/>
+                  订单结算后， 相应金额即进入店铺可用余额。
+                </p>
             </TabPanel>
 
             <TabPanel tab="待结算金额" id="2">
@@ -176,47 +165,13 @@ class index extends React.Component {
                   />
                   <Button style={{marginLeft:"10px"}}>近7天</Button>
                   <Button style={{marginLeft:"10px"}}>近30天</Button>
-                  <Button style={{marginLeft:"10px"}}>近30天</Button>
-                  <span style={{marginLeft:"10px"}}>
-                    <Select defaultValue="全部" style={{ width: 120 }} >
-                      <Option value="全部">全部</Option>
-                      <Option value="订单入账">订单入账</Option>
-                      <Option value="提现">提现</Option>
-                      <Option value="返现">返现</Option>
-                      <Option value="返现退回">返现退回</Option>
-                      <Option value="退款">退款</Option>
-                      <Option value="交易手续费">交易手续费</Option>
-                      <Option value="交易补贴">交易补贴</Option>
-                    </Select>
-                  </span>
+              
                 </div>
                 <Table columns={columns2} dataSource={data} />
             </TabPanel> 
 
             <TabPanel tab="不可用余额" id="3">
-                <div className="mb20 mt20">
-                  <DateRangePicker2
-                    showTime
-                    format="YYYY-MM-DD HH:mm:ss"
-                    value={rangeValue}
-                    onChange={this.onChangeRange2}
-                  />
-                  <Button style={{marginLeft:"10px"}}>近7天</Button>
-                  <Button style={{marginLeft:"10px"}}>近30天</Button>
-                  <Button style={{marginLeft:"10px"}}>近30天</Button>
-                  <span style={{marginLeft:"10px"}}>
-                    <Select defaultValue="全部" style={{ width: 120 }} >
-                      <Option value="全部">全部</Option>
-                      <Option value="订单入账">订单入账</Option>
-                      <Option value="提现">提现</Option>
-                      <Option value="返现">返现</Option>
-                      <Option value="返现退回">返现退回</Option>
-                      <Option value="退款">退款</Option>
-                      <Option value="交易手续费">交易手续费</Option>
-                      <Option value="交易补贴">交易补贴</Option>
-                    </Select>
-                  </span>
-                </div>
+
                 <Table columns={columns3} dataSource={data} />
             </TabPanel>
 
@@ -230,17 +185,14 @@ class index extends React.Component {
                   />
                   <Button style={{marginLeft:"10px"}}>近7天</Button>
                   <Button style={{marginLeft:"10px"}}>近30天</Button>
-                  <Button style={{marginLeft:"10px"}}>近30天</Button>
                   <span style={{marginLeft:"10px"}}>
                     <Select defaultValue="全部" style={{ width: 120 }} >
                       <Option value="全部">全部</Option>
-                      <Option value="订单入账">订单入账</Option>
-                      <Option value="提现">提现</Option>
-                      <Option value="返现">返现</Option>
-                      <Option value="返现退回">返现退回</Option>
-                      <Option value="退款">退款</Option>
-                      <Option value="交易手续费">交易手续费</Option>
-                      <Option value="交易补贴">交易补贴</Option>
+                      <Option value="申请中">申请中</Option>
+                      <Option value="银行处理中">银行处理中</Option>
+                      <Option value="提现成功">提现成功</Option>
+                      <Option value="提现退回">提现退回</Option>
+                      <Option value="提现失败">提现失败</Option>
                     </Select>
                   </span>
                 </div>

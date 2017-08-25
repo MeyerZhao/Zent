@@ -94,10 +94,11 @@ class index extends React.Component {
           </div>
 
 
-              <div className="mb10" style={{textAlign:"right"}}>
-                <span >
+              <div className="mb10" >
+                <span className="table-infor">
                   客户数：3444  购买客户数：22   购买总额：2222.00   购买次数：111   客单价：13.00
                 </span>
+                <div style={{clear:"both"}}></div>
               </div>
               <Table columns={columns} dataSource={data} />
 

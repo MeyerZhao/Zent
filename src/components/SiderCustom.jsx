@@ -17,24 +17,9 @@ class SiderCustom extends Component {
         openKey: '',
         selectedKey: ''
     };
-    componentDidMount() {
-        const _path = this.props.path;
-        this.setState({
-            openKey: _path.substr(0, _path.lastIndexOf('/')),
-            selectedKey: _path
-        });
-    }
-    componentWillReceiveProps(nextProps) {
-        console.log(nextProps);
-        this.onCollapse(nextProps.collapsed);
-    }
-    onCollapse = (collapsed) => {
-        console.log(collapsed);
-        this.setState({
-            collapsed,
-            mode: collapsed ? 'vertical' : 'inline',
-        });
-    };
+
+
+
     menuClick = e => {
         this.setState({
             selectedKey: e.key
@@ -86,7 +71,7 @@ class SiderCustom extends Component {
                 breakpoint="lg"
                 collapsible
                 collapsed={this.props.collapsed}
-                onCollapse={this.onCollapse}
+                onCollapse="vertical"
                 style={{background: '#fff', borderRight: "1px solid #e9e9e9"}}
             >
             <div className="logo" >
@@ -147,7 +132,7 @@ class SiderCustom extends Component {
 
                 </Menu>
 
-                <Pop className="app-userinfo__pop" trigger={trigger} position="top" content={content3} >
+                <Pop className="app-userinfo__pop2" trigger={trigger} position="top" content={content3} >
                     <div className="app-userinfo">
                         <div className="app-userinfo-avatar"></div>
                        <div className="app-userinfo__phone">18858568856</div>

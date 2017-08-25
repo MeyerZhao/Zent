@@ -1,5 +1,6 @@
 import React from 'react'
-import { Form, Input, Select, Button, Checkbox } from 'antd';
+import { Link } from 'react-router'
+import { Form, Input, Select, Button, Checkbox, Breadcrumb } from 'antd';
 import PicturesWall2 from '../../components/PicturesWall2.jsx'
 const FormItem = Form.Item;
 const Option = Select.Option;
@@ -25,9 +26,6 @@ class RegistrationForm extends React.Component {
       }
     });
   }
-
-
-
   render() {
 
     const formItemLayout = {
@@ -52,8 +50,6 @@ class RegistrationForm extends React.Component {
         },
       },
     };
-
-
     return (
       <Form onSubmit={this.handleSubmit} style={{width:"540px"}}>
         <FormItem
@@ -129,11 +125,12 @@ class index extends React.Component {
   render(){
     return (
       <div>
-
-        <div className="mb20">
-          <h4 className="block-title mb20"  >添加自定义商品</h4>
-          <WrappedRegistrationForm  />
-        </div>
+        <Breadcrumb className="mb20">
+           <Breadcrumb.Item><Link to="/goodsmgmtb">店铺设置</Link></Breadcrumb.Item>
+           <Breadcrumb.Item>添加自定义商品</Breadcrumb.Item>
+        </Breadcrumb>        
+        <h4 className="block-title mb20"  >添加自定义商品</h4>
+        <WrappedRegistrationForm  />
 
       </div>
       )
