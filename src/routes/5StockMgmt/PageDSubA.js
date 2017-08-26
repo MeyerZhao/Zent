@@ -64,7 +64,7 @@ class index extends React.Component {
 
           <div style={{padding:"10px", textAlign:"center", background:"#f7f7f7"}}>          	
 		          <Button type="primary" size="large" onClick={this.showModal}>&nbsp;开始盘点&nbsp;</Button> 
-		          <Link to=""> 跳转到盘点中 </Link>
+		          <Link to="/stockmgmtd/stockmgmtdsubb"> 跳转到盘点中 </Link>
 	          <Modal
 	            title="开始盘点后将选中选中商品的库存！"
 	            visible={this.state.visible}
