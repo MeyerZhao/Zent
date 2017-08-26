@@ -1,14 +1,15 @@
 import React from 'react'
 import { Link } from 'react-router';
-import { Button, } from 'antd';
-import { Input, Select } from 'antd';
+import { Input, Select, Button, Cascader} from 'antd';
 import { Table } from 'antd';
 import { Tabs } from 'zent';
+import city from '../../utils/city'
+import PageAMore from './PageAMore.js'
 const TabPanel = Tabs.TabPanel;
 const Search = Input.Search;
 
 const columns = [{
-  title: '客户', dataIndex: 'item1', key: 'item1', render: (text,record) => <Link to={text}>{record.item2}</Link> }, {
+  title: '客户', dataIndex: 'item1', key: 'item1',}, {
   title: '收货人', dataIndex: 'item2', key: 'item2', }, {
   title: '配送地区', dataIndex: 'item3', key: 'item3', }, {
   title: '订单状态', dataIndex: 'item4', key: 'item4', }, {
@@ -18,9 +19,7 @@ const columns = [{
   title: '商品数', dataIndex: 'item8', key: 'item8', }, {
   title: '操作', key: 'action', render: (text, record) => (
     <span>
-      <a href="">打印配货单</a>
-      <span className="ant-divider" />
-      <a href="">打印收货地址</a>
+      <Link to="/ordermgmtb/ordermgmtbsuba">详情</Link>
       <span className="ant-divider" />
       <a href="">备注</a>
     </span>
@@ -29,7 +28,7 @@ const columns = [{
 
 const data = [{
   key: '1',
-  item1: '/ordermgmtb/ordermgmtbsuba',
+  item1: '',
   item2: 'John Brown',
   item3: 'John Brown',
   item4: 'John Brown',
@@ -70,7 +69,15 @@ class index extends React.Component {
 
 	    		<div className="searchbg">
 	    			<div className=" " >    				
-	    			  <Search placeholder="输入关键字" style={{ marginRight:"10px", width: 200 }} onSearch={value => console.log(value)} />
+	    			  <Search placeholder="客户/收货人/电话" style={{ marginRight:"10px", width: 200 }} onSearch={value => console.log(value)} />
+              <div style={{display:"inline-block", marginRight:"10px", width: 200 }}>
+                <Cascader
+                  style={{ width: '100%' }}
+                  options={city}
+                  placeholder="配送地区"
+                  changeOnSelect
+                />
+              </div>
 	    			 <Button type="primary" >搜索</Button>
 	    			</div>
 	    		</div>
@@ -88,24 +95,21 @@ class index extends React.Component {
                   </Select>               
                   <Button >商品统计</Button>
                   <span className="table-infor">
-                    客户数：10   订单数：11     订单金额：200.00  商品数：222
+                    客户数10， 订单数11， 订单金额200.00
                   </span>
                 </div>
-                <Tabs
-                   type="slider"
-                   activeId={this.state.activeId2}
-                   onTabChange={this.onTabChange2}
-                   >
-                   <TabPanel tab={<span>全部</span>} id="1"> </TabPanel>
-                   <TabPanel tab="待发货（1） " id="2"></TabPanel>
-                   <TabPanel tab="待签收（3） " id="3"></TabPanel>
-                   <TabPanel tab="待转账" id="4"></TabPanel>
-                   <TabPanel tab="交易成功 " id="5"></TabPanel>
-                </Tabs>
+  
                 <Table rowSelection={rowSelection} columns={columns} dataSource={data} />
               </TabPanel>
               <TabPanel tab="8月16日" id="2"> <div>选项二的内容</div> </TabPanel> 
               <TabPanel tab="8月15日" id="3"> <div>选项三的内容</div> </TabPanel>
+              <TabPanel tab="8月15日" id="3"> <div>选项三的内容</div> </TabPanel>
+              <TabPanel tab="8月14日" id="4"> <div>选项三的内容</div> </TabPanel>
+              <TabPanel tab="8月13日" id="5"> <div>选项三的内容</div> </TabPanel>
+              <TabPanel tab="8月12日" id="6"> <div>选项三的内容</div> </TabPanel>
+              <TabPanel tab="8月11日 " id="7"> <div>选项三的内容</div> </TabPanel>
+              <TabPanel tab="8月10日 " id="8"> <div>选项三的内容</div> </TabPanel>
+              <TabPanel tab="更多 " id="9"> <div><PageAMore /></div> </TabPanel>
             </Tabs>
           </div>
 

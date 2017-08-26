@@ -9,45 +9,29 @@ const { RangePicker } = DatePicker;
 const FormItem = Form.Item;
 
 const columns = [{
-  title: '打印机', dataIndex: 'item4', key: 'item4', }, {
-  title: '打印接机身号码', dataIndex: 'item5', key: 'item5', }, {
-  title: '打印机状态', dataIndex: 'item6', key: 'item6', }, {
-  title: '操作', key: 'action', render: (text, record) => (
-    <span>
-      <span className="ant-divider" />
-      <a href="">Delete</a>
-      <span className="ant-divider" />
-      <a href="" className="ant-dropdown-link">
-        More actions <Icon type="down" />
-      </a>
-    </span>
-  ),
-}];
+  title: '商品', dataIndex: 'item1', key: 'item1', render: (text, record)=>( 
+  <div style={{position:"relative"}}><img src="https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=2755178026,3344409706&fm=58" alt="鲜花" style={{width:"60px", height:"60px",float:"left"}} /> 
+  <div style={{marginLeft:"70"}}>卡罗拉（网）<br/> 20枝  <br/> A级,橙色,本地,多头</div></div>
+  ) }, {
+  title: 'SKU编号', dataIndex: 'item2', key: 'item2', }, {
+  title: '属性值', dataIndex: 'item3', key: 'item3', }, {
+  title: '入库数', dataIndex: 'item4', key: 'item4', }, {
+  title: '已出库数', dataIndex: 'item5', key: 'item5', }, {
+  title: '入库价格', dataIndex: 'item6', key: 'item6', }, {
+  title: '供应商', dataIndex: 'item7', key: 'item7', }, {
+  title: '入库时间', dataIndex: 'item8', key: 'item8', }, {
+  title: '批次号', dataIndex: 'item9', key: 'item9', }];
 
 const data = [{
   key: '1',
-  item1: 'John Brown',
-  item2: 'John Brown',
-  item3: 'John Brown',
-  item4: 'John Brown',
-  item5: 'John Brown',
-  item6: 'John Brown',
-}, {
-  key: '2',
-  item1: 'John Brown',
-  item2: 'John Brown',
-  item3: 'John Brown',
-  item4: 'John Brown',
-  item5: 'John Brown',
-  item6: 'John Brown',
-}, {
-  key: '3',
-  item1: 'John Brown',
-  item2: 'John Brown',
-  item3: 'John Brown',
-  item4: 'John Brown',
-  item5: 'John Brown',
-  item6: 'John Brown',
+  item1: '101050A1',
+  item2: 'A级,橙色,本地,多头',
+  item3: '8',
+  item4: '7',
+  item5: '2.00',
+  item6: '未知',
+  item7: '2017-05-02 12:01:27 yushui',
+  item8: '170517',
 }];
 
 export default class index extends React.Component {
@@ -64,13 +48,13 @@ export default class index extends React.Component {
         <div>
           <div className="searchbg">          
             <Form layout='inline'>
-              <FormItem label="搜索">
+              <FormItem label="">
                 <Input placeholder="商品/SKU/供应商/批次号" />
               </FormItem>
-              <FormItem label="入库时间">
+              <FormItem label="">
                 <RangePicker />
               </FormItem>
-              <FormItem label="商品分组">
+              <FormItem label="">
                 <Select defaultValue="商品分组" style={{  width: 120 }} >
                   <Option value="分组1">分组1</Option>
                   <Option value="分组2">分组2</Option>

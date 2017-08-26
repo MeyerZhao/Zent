@@ -36,12 +36,12 @@ class index extends React.Component {
                 </Link>
               </Col>
               <Col {...ColProps} >
-                <Link to="/shopmgmt/shopmgmtcsube">
+                <Link to="/shopmgmt/shopmgmtcsubf">
                   <Card title="配货单（未设置）" style={{color:"rgba(0, 0, 0, 0.65)"}}>设置自身特定的配货单名称</Card>
                 </Link>
               </Col>
               <Col {...ColProps} >
-                <Link to="/shopmgmt/shopmgmtcsubf">
+                <Link to="/shopmgmt/shopmgmtcsube">
                   <Card title="自提点（未设置）" style={{color:"rgba(0, 0, 0, 0.65)"}}>设置自身特定的门店提货地点</Card>
                 </Link>
               </Col>

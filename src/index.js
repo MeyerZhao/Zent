@@ -61,7 +61,7 @@ import StockMgmt from './routes/5StockMgmt/';
     import StockMgmtB from './routes/5StockMgmt/PageB';
     import StockMgmtC from './routes/5StockMgmt/PageC';
     import StockMgmtD from './routes/5StockMgmt/PageD';
-        // import StockMgmtDCheck from './routes/5StockMgmt/PageDCheck';
+        import StockMgmtDSubA from './routes/5StockMgmt/PageDSubA';
     import StockMgmtE from './routes/5StockMgmt/PageE';
     import StockMgmtF from './routes/5StockMgmt/PageF';
         import StockMgmtFFormA from './routes/5StockMgmt/PageFFormA';
@@ -156,6 +156,7 @@ ReactDOM.render(
         <Route path='/stockmgmtb' component={StockMgmtB} />
         <Route path='/stockmgmtc' component={StockMgmtC} />
         <Route path='/stockmgmtd' component={StockMgmtD} />
+            <Route path='/stockmgmtd/stockmgmtdsuba' component={StockMgmtDSubA} />
         <Route path='/stockmgmte' component={StockMgmtE} />
         <Route path='/stockmgmtf' component={StockMgmtF} />
             <Route path='/stockmgmtf/stockmgmtfforma' component={StockMgmtFFormA} />

@@ -50,17 +50,18 @@ class index extends React.Component {
         	<div className="mb10">
 	        	<h4 className="block-title" >订单详情</h4>
 	        </div>
-        	<div style={{padding:"10px"}} className="mb20">
-        		<div className="mb10">
-		        	<b {...btnLayout}>订单编号：517052012334556</b><span {...btnLayout}>已支付</span> 
-		        	<Button>订单操作按钮/确认订单/签收订单</Button>
+
+        	<div style={{padding:"10px"}} className="mb10">
+        		<div className="mb10" style={{fontWeight:"bold", fontSize:"14px"}}>
+		        	<b {...btnLayout}>订货单号：517052012334556 </b>
+		        	<span {...btnLayout}>待确认</span> 
+		        	<Button {...btnLayout} type="primary">确认订单</Button>
         		</div>
-	      		<div className="mb10">
-	        		<Button {...btnLayout}>生成正式订单</Button>
-	        		正式订单编号:21232424
+	      		<div className="mb10" style={{fontSize:"14px"}}>
+	        		<b {...btnLayout}>订单编号：21232424 </b>
 	        	</div>
 	        	<div className="mb10" style={{height:"28px", lineHeight:"28px"}}>
-	        		备忘信息：备忘旗帜颜色列表
+	        		<span style={{fontWeight:"bold", fontSize:"14px"}}>备忘信息：</span>备忘旗帜颜色列表
 	        		<div style={{float:"right"}}>
 		        		<span {...btnLayout}>编辑图标</span>
 		        		<Select defaultValue="1" style={{width:120}}>
@@ -69,10 +70,10 @@ class index extends React.Component {
 		        		</Select>
 	        		</div>
 	        	</div>
-	        	<div>
+	        	<div className="mb20">
 	        		<Input type="textarea" rows={6}></Input>
-	        		客户备注：一定要新鲜、发货要及时 谢谢！
 	        	</div>
+	        		<span style={{fontSize:"14px",color:"red"}}><b>客户备注：</b>一定要新鲜、发货要及时 谢谢！</span>
 					</div>
 					
         	<div style={{padding:"10px"}}>

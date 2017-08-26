@@ -1,3 +1,6 @@
+/**
+ * 商品统计
+ */
 import React from 'react'
 import { Button, } from 'antd';
 import { Table, Icon } from 'antd';
@@ -10,7 +13,10 @@ const Search = Input.Search;
 
 
 const columns = [{
-  title: '商品', dataIndex: 'item1', key: 'item1', }, {
+    title: '商品', dataIndex: 'item1', key: 'item1', render: (text, record)=>( 
+    <div style={{position:"relative"}}><img src="https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=2755178026,3344409706&fm=58" alt="鲜花" style={{width:"60px", height:"60px",float:"left"}} /> 
+    <div style={{marginLeft:"70"}}>卡罗拉（网）<br/> 20枝  <br/> A级,橙色,本地,多头</div></div>
+    ) }, {
   title: 'SKU编号', dataIndex: 'item2', key: 'item2', }, {
   title: '属性', dataIndex: 'item3', key: 'item3', }, {
   title: '均价', dataIndex: 'item4', key: 'item4', }, {

@@ -9,7 +9,13 @@ const Option = Select.Option;
 const Search = Input.Search;
 const FormItem = Form.Item;
 
-
+const children = [
+      <option value="1">商品属性1</option>,
+      <option value="2">商品属性2</option>,
+      <option value="3">商品属性3</option>,
+      <option value="4">商品属性4</option>,
+      <option value="5">商品属性5</option>,
+];
 
 const columns = [{
   title: '商品', dataIndex: 'item1', key: 'item1', render: (text, record)=>( 
@@ -17,6 +23,8 @@ const columns = [{
     <div style={{marginLeft:"70"}}>卡罗拉（网）<br/> 20枝  <br/> A级,橙色,本地,多头</div></div>
     ) }, {
   title: 'SKU编号', dataIndex: 'item2', key: 'item2', }, {
+  title: '商品库分组', dataIndex: 'item3', key: 'item3', }, {
+  title: '分组状态', dataIndex: 'item4', key: 'item4', }, {
   title: '操作', key: 'action', render: (text, record) => (
     <span>
       <a href="">加入分组</a>
@@ -26,11 +34,21 @@ const columns = [{
 
 const data = [{
   key: '1',
-  item1: 'John Brown',
+  item1: '鲜花名字',
   item2: '101050A1',
-  item3: '101050A1'
+  item3: '玫瑰',
+  item4: '未加入',
 }];
 
+// rowSelection object indicates the need for row selection
+const rowSelection = {
+  onChange: (selectedRowKeys, selectedRows) => {
+    console.log(`selectedRowKeys: ${selectedRowKeys}`, 'selectedRows: ', selectedRows);
+  },
+  getCheckboxProps: record => ({
+    disabled: record.name === 'Disabled User',    // Column configuration not to be checked
+  }),
+};
 
 class index extends React.Component {
   state = {
@@ -53,30 +71,36 @@ class index extends React.Component {
               <FormItem label="">
                 <Search placeholder="商品/SKU编号" onSearch={value => console.log(value)} />
               </FormItem>
-              <FormItem label="所属分组">
-                <Select defaultValue="商品分组" style={{  width: 120 }} >
+              <FormItem label="">
+                <Select defaultValue="所有分组" style={{  width: 120 }} >
                   <Option value="分组1">分组1</Option>
                   <Option value="分组2">分组2</Option>
                   <Option value="分组3">分组3</Option>
                 </Select>
               </FormItem>
-              <FormItem label="颜色" className='formitemlabel'>
-                <Checkbox >颜色1</Checkbox>
-                <Checkbox >颜色2</Checkbox>
-                <Checkbox >颜色3</Checkbox>
+              <FormItem label="">
+                <Select defaultValue="分组状态" style={{  width: 120 }} >
+                  <Option value="分组状态1">分组状态1</Option>
+                  <Option value="分组状态2">分组状态2</Option>
+                  <Option value="分组状态3">分组状态3</Option>
+                </Select>
               </FormItem>
-              <FormItem label="等级" className='formitemlabel'>
-                <Checkbox >等级1</Checkbox>
-                <Checkbox >等级2</Checkbox>
-                <Checkbox >等级3</Checkbox>
-              </FormItem>
-              <FormItem label="产地" className='formitemlabel'>
-                <Checkbox >产地1</Checkbox>
-                <Checkbox >产地2</Checkbox>
-                <Checkbox >产地3</Checkbox>
-              </FormItem>
+
               <FormItem >
-                <Button type="primary" >搜索</Button> 
+                <Select
+                   mode="tags"
+                   placeholder="商品属性"
+                   style={{ minWidth: "150px" }}
+                 >
+                   {children}
+                 </Select>
+              </FormItem>
+
+
+
+              <FormItem >
+                <Button type="primary"  style={{marginRight:"10px"}}>搜索</Button> 
+                <Button >重置</Button> 
               </FormItem>
             </Form>  
     			</div>
@@ -92,7 +116,7 @@ class index extends React.Component {
                   <option value="批量打印配货单">批量打印配货单</option>
                 </Select>
               </div>
-              <Table columns={columns} dataSource={data} />
+              <Table rowSelection={rowSelection} columns={columns} dataSource={data} />
             </TabPanel>
             <TabPanel tab="玫瑰"id="2"> <div>选项二的内容</div> </TabPanel> 
             <TabPanel tab="康乃馨"id="3"> <div>选项三的内容</div> </TabPanel>

@@ -29,8 +29,8 @@ export default class extends React.Component {
           title={this.props.title}
           visible={this.state.visible}
           onOk={this.handleOk}
-          onCancel={this.handleCancel}
-          footer={null}
+          onCancel={this.handleCancel}          
+          {...this.props}
         >
           {this.props.children}
         </Modal>

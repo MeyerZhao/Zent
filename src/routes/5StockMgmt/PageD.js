@@ -23,14 +23,12 @@ class index extends React.Component {
     return (
         <div>
           <div className="mb10 searchbg" >
-            <Search placeholder="搜索"style={{ marginRight:"10px", width: 200 }} onSearch={value => console.log(value)} />
+          <Input placeholder="搜索" style={{ marginRight:"10px", width: 200 }}  ></Input>
             <Button type="primary" >搜索</Button>
           </div>
 
           <div className="mb10">
-              <Link to='/stockmgmtf/stockmgmtfforma'>
-                <Button type="primary" >新建盘点</Button>
-              </Link>
+              <Link to='/stockmgmtd/stockmgmtdsuba'> <Button type="primary" >新建盘点</Button> </Link>
           </div>
 
           <Table columns={columns} data={data} />

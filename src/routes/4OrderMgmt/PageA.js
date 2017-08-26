@@ -52,22 +52,6 @@ const data = [{
   item4: 'John Brown',
   item5: 'John Brown',
   item6: 'John Brown',
-}, {
-  key: '2',
-  item1: 'John Brown',
-  item2: 'John Brown',
-  item3: 'John Brown',
-  item4: 'John Brown',
-  item5: 'John Brown',
-  item6: 'John Brown',
-}, {
-  key: '3',
-  item1: 'John Brown',
-  item2: 'John Brown',
-  item3: 'John Brown',
-  item4: 'John Brown',
-  item5: 'John Brown',
-  item6: 'John Brown',
 }];
 
 
@@ -112,7 +96,7 @@ class index extends React.Component {
                 <Cascader
                   style={{ width: '100%' }}
                   options={city}
-                  placeholder="请选择地址！"
+                  placeholder="配送地区"
                   changeOnSelect
                 />
               </div>
@@ -144,7 +128,7 @@ class index extends React.Component {
                       <option value="批量签收">批量签收</option>
                       <option value="批量打印配货单">批量打印配货单</option>
                     </Select>               
-                    <Link to="/ordermgmta/ordermgmtasuba" target="_blank"><Button>商品统计</Button></Link> <Button >EXCEL导出</Button>
+                    <Link to="/ordermgmta/ordermgmtasuba" ><Button>商品统计</Button></Link> <Button >EXCEL导出</Button>
                     <span className="table-infor" >
                       订单数11 （待确认0、待配送2、维权中0 ) ，客户数10，订单金额200.00
                     </span>

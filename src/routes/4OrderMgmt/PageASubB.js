@@ -1,3 +1,6 @@
+/**
+ * 订单详情
+ */
 import React from 'react'
 import { Button, Select, Input, Table} from 'antd';
 const option = Select.option;
@@ -75,8 +78,42 @@ class index extends React.Component {
         		<div className="mytable">
 	        		<h3>订单信息</h3>
 	        		<table style={{marginBottom:"30px", width:"100%"}}>
-	        				<tr><th>订单金额</th><td>#</td><th>优惠金额</th><td>#</td><th>实付金额</th><td>#</td><th>支付方式</th><td>#</td></tr>
-	        				<tr><th>下单时间</th><td>#</td><th>付款时间</th><td>#</td><th>配送时间</th><td>#</td><th>维权时间</th><td>#</td></tr>
+	        				<tr>
+		        				<th>订单金额</th>
+		        				<th>运费金额</th>
+		        				<th>优惠金额</th>
+		        				<th>实付金额</th>
+		        				<th>支付方式</th>
+		        				<th>配送日期</th>
+		        				<th>下单时间</th>
+	        				</tr>
+	        				<tr>
+	        					<td>#</td>
+	        					<td>#</td>
+	        					<td>#</td>
+	        					<td>#</td>
+	        					<td>#</td>
+	        					<td>#</td>
+	        					<td>#</td>
+	        				</tr>
+	        				<tr>
+		        				<th>付款时间</th>
+		        				<th>确认时间</th>
+		        				<th>发货时间</th>
+		        				<th>签收时间</th>
+		        				<th>转账时间</th>
+		        				<th>维权时间</th>
+		        				<th>取消时间</th>
+	        				</tr>
+	        				<tr>
+	        					<td>#</td>
+	        					<td>#</td>
+	        					<td>#</td>
+	        					<td>#</td>
+	        					<td>#</td>
+	        					<td>#</td>
+	        					<td>#</td>
+	        				</tr>
 	        			
 	        		</table>
         		</div>

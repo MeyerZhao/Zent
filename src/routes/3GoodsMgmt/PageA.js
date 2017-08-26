@@ -5,7 +5,10 @@ import { Tabs } from 'zent';
 const TabPanel = Tabs.TabPanel;
 const Option = Select.Option;
 const columns = [{
-  title: '商品', dataIndex: 'item1', key: 'item1', }, {
+    title: '商品', dataIndex: 'item1', key: 'item1', render: (text, record)=>( 
+    <div style={{position:"relative"}}><img src="https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=2755178026,3344409706&fm=58" alt="鲜花" style={{width:"60px", height:"60px",float:"left"}} /> 
+    <div style={{marginLeft:"70"}}>卡罗拉（网）<br/> 20枝  <br/> A级,橙色,本地,多头</div></div>
+    ) }, {
   title: 'SKU编号', dataIndex: 'item2', key: 'item2', }, {
   title: '属性值', dataIndex: 'item3', key: 'item3', }, {
   title: '所属分组', dataIndex: 'item4', key: 'item4', }, {
@@ -14,16 +17,15 @@ const columns = [{
   title: '最小订购', dataIndex: 'item7', key: 'item7', }, {
   title: '操作记录', key: 'action', render: (text, record) => (
     <span>
-      admin
-      <span className="ant-divider" />
       2017-8-25 10:31:06
+      <span className="ant-divider" />
+      admin
     </span>
   ),
 }];
 
 const data = [{
-  key: '1', item1: 'John Brown', item2: 'John Brown', item3: 'John Brown', item4: 'John Brown', item5: 'John Brown', item6: 'John Brown', item7: 'John Brown' }, {
-  key: '1', item1: 'John Brown', item2: 'John Brown', item3: 'John Brown', item4: 'John Brown', item5: 'John Brown', item6: 'John Brown', item7: 'John Brown' }]; 
+  key: '1', item1: 'John Brown', item2: 'SKU编号', item3: 'A级,橙色,本地,多头', item4: '所属分组', item5: '5.0', item6: '100', item7: '1' }]; 
 
 
 class index extends React.Component {

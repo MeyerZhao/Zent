@@ -50,13 +50,14 @@ class index extends React.Component {
         	<div className="mb10">
 	        	<h4 className="block-title" >订单详情</h4>
 	        </div>
-        	<div style={{padding:"10px"}} className="mb20">
-	      		<div className="mb10">
-	        		<Button {...btnLayout}>打印配货单</Button>
-	        		<Button {...btnLayout}>打印收货地址</Button>
-	        		<Button {...btnLayout}>追加物流信息</Button>
-	        		物流状态：配送中
-	        	</div>
+        	<div style={{padding:"10px"}} className="mb10">
+            <div className="mb10" style={{fontWeight:"bold", fontSize:"14px"}}>
+              <b {...btnLayout}>订单状态：待配送 </b>
+              <Button >打印配货单</Button>
+            </div>
+            <div style={{fontSize:"14px"}}>
+              物流信息：顺丰速运 1299899000  配送中
+            </div>
 					</div>
 					
         	<div style={{padding:"10px"}}>

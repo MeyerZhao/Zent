@@ -7,6 +7,7 @@ import { Tabs, Pop } from 'zent';
 const TabPanel = Tabs.TabPanel;
 const Option = Select.Option;
 const FormItem = Form.Item;
+
 const content = (
     <div style={{lineHeight:"30px", padding:"10px 20px"}}>
       <div >
@@ -20,16 +21,13 @@ const content = (
       </div>
     </div>
   );
+
 const children = [
-      <option value="1">全部状态</option>,
-      <option value="2">待支付</option>,
-      <option value="3">待确认</option>,
-      <option value="4">待配送</option>,
-      <option value="5">已签收</option>,
-      <option value="6">待转账</option>,
-      <option value="7">维权中</option>,
-      <option value="8">交易关闭</option>,
-      <option value="9">交易成功</option>,
+      <option value="1">商品属性1</option>,
+      <option value="2">商品属性2</option>,
+      <option value="3">商品属性3</option>,
+      <option value="4">商品属性4</option>,
+      <option value="5">商品属性5</option>,
 ];
 
 const columns = [{
@@ -46,7 +44,7 @@ const columns = [{
     <span>
       <Link to="/goodsmgmtb/goodsmgmtbforma">编辑</Link>
       <span className="ant-divider" />
-      <Pop className="app-userinfo__pop2" trigger="click" position="left-top" content={content} >
+      <Pop className="app-userinfo__pop2" trigger="click" position="top-center" content={content} >
         <a >改分组</a>
       </Pop>
       <span className="ant-divider" />
@@ -59,12 +57,12 @@ const columns = [{
 
 const data = [{
   key: '1',
-  item1: 'John Brown',
-  item2: 'John Brown',
-  item3: 'John Brown',
-  item4: 'John Brown',
-  item5: 'John Brown',
-  item6: 'John Brown',
+  item1: '鲜花名字',
+  item2: '101050A1',
+  item3: '商品库',
+  item4: '玫瑰',
+  item5: '20',
+  item6: '100',
 }];
 
 

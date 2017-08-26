@@ -18,7 +18,7 @@ const columns = [{
   title: '下单时间', dataIndex: 'item8', key: 'item8', }, {
   title: '操作', key: 'action', render: (text, record) => (
     <span>
-      <a href="">详情</a>
+      <Link to="/ordermgmtc/ordermgmtcsuba">详情</Link>
       <span className="ant-divider" />
       <a href="">备注</a>
     </span>
@@ -27,7 +27,7 @@ const columns = [{
 
 const data = [{
   key: '1',
-  item1: '/ordermgmtc/ordermgmtcsuba',
+  item1: ' ',
   item2: 'John Brown',
   item3: 'John Brown',
   item4: 'John Brown',
@@ -69,7 +69,7 @@ class index extends React.Component {
 
 	    		<div className="searchbg">
 	    			<div className=" " >    				
-	    			  <Search placeholder="输入关键字" style={{ marginRight:"10px", width: 200 }} onSearch={value => console.log(value)} />
+	    			  <Search placeholder="订货单号/客户/收货人/电话" style={{ marginRight:"10px", width: 200 }} onSearch={value => console.log(value)} />
 	    			 <Button type="primary" >搜索</Button>
 	    			</div>
 	    		</div>
