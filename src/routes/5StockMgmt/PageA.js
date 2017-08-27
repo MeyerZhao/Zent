@@ -1,9 +1,8 @@
 import React from 'react'
 import { Table, Input, Button  } from 'antd';
 import { Tabs } from 'zent';
-const TabPanel = Tabs.TabPanel;
-const Search = Input.Search;
 
+const TabPanel = Tabs.TabPanel;
 const columns = [{
   title: '商品', dataIndex: 'item1', key: 'item1', render: (text, record)=>( 
   <div style={{position:"relative"}}><img src="https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=2755178026,3344409706&fm=58" alt="鲜花" style={{width:"60px", height:"60px",float:"left"}} /> 
@@ -19,7 +18,7 @@ const columns = [{
   title: '库存量', dataIndex: 'item9', key: 'item9', }];
 
 const data = [{
-  key: '1', item1: 'John Brown', item2: 'John Brown', item3: 'John Brown', item4: 'John Brown', item5: 'John Brown', item6: 'John Brown', }];
+  key: '1', item1: '商品', item2: '101050', item3: '3', item4: '8', item5: '1.00', item6: '7',item7:'2.00',item8:'1.00',item9:'4' }];
 
 
 class index extends React.Component {

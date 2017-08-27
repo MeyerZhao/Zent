@@ -1,7 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router';
-import { Table, Button, Input, Row, Col, Select } from 'antd';
-import Modal from '../../components/Modal'
+import { Table, Input, Select } from 'antd';
 const Option = Select.Option;
 const Search = Input.Search;
 const columns = [{

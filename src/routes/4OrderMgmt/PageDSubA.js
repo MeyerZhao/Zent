@@ -38,19 +38,19 @@ class index extends React.Component {
 	        	<h4 className="block-title" >订单详情</h4>
 	        </div>
         	<div style={{padding:"10px"}} className="mb20">
-        		<div className="mb10">
+        		<div className="mb10" style={{fontWeight:"bold", fontSize:"14px"}}>
 		        	<b {...btnLayout}>订单编号：517052012334556</b><span {...btnLayout}>已支付</span> 
 		        	<span {...btnLayout}>订单金额：100.00元</span>
 		        	<span {...btnLayout}>退款金额：100.00元</span>
         		</div>
-	      		<div className="mb10">
+	      		<div className="mb10" style={{fontWeight:"bold", fontSize:"14px"}}>
 	      			<b>退款状态：待商家处理</b>
 	        		<Button {...btnLayout}>同一退款</Button>
 	        		<Button {...btnLayout}>修改退款金额</Button>
 	        		<Button {...btnLayout}>拒绝退款</Button>
 	        	</div>
 	        	<div className="mb10" style={{height:"28px", lineHeight:"28px"}}>
-	        		备忘信息：备忘旗帜颜色列表
+	        		<span style={{fontWeight:"bold", fontSize:"14px"}}>备忘信息：</span>备忘旗帜颜色列表
 	        		<div style={{float:"right"}}>
 		        		<span {...btnLayout}>编辑图标</span>
 		        		<Select defaultValue="1" style={{width:120}}>

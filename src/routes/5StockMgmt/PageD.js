@@ -2,8 +2,6 @@ import React from 'react'
 import { Table, Input, Button  } from 'antd';
 import { Link } from 'react-router'
 
-const Search = Input.Search;
-
 const columns = [{
   title: '单据编号', dataIndex: 'item1', key: 'item1', }, {
   title: '业务时间', dataIndex: 'item6', key: 'item6', }, {

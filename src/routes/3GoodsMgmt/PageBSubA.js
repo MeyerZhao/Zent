@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router'
 import { Button, Form, Select } from 'antd';
-import { Input, Checkbox, Breadcrumb } from 'antd';
+import { Input, Breadcrumb } from 'antd';
 import { Table } from 'antd';
 import { Tabs} from 'zent'
 const TabPanel = Tabs.TabPanel;

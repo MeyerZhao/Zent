@@ -1,6 +1,6 @@
 import React from 'react'
 import { Input, Form, Button } from 'antd';
-import { Table, Icon } from 'antd';
+import { Table } from 'antd';
 import { DatePicker, Select } from 'antd';
 import { Tabs } from 'zent';
 const TabPanel = Tabs.TabPanel;

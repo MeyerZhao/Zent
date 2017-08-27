@@ -1,8 +1,9 @@
 import React from 'react'
 import { Input, Form, Button } from 'antd';
-import { Table, Icon } from 'antd';
-import { DatePicker, Select } from 'antd';
+import { Table } from 'antd';
+import { DatePicker, Select, Modal} from 'antd';
 import { Tabs } from 'zent';
+import PageBForm from './PageBForm'
 const TabPanel = Tabs.TabPanel;
 const Option = Select.Option;
 const { RangePicker } = DatePicker;
@@ -24,23 +25,42 @@ const columns = [{
 
 const data = [{
   key: '1',
-  item1: '101050A1',
-  item2: 'A级,橙色,本地,多头',
-  item3: '8',
-  item4: '7',
-  item5: '2.00',
-  item6: '未知',
-  item7: '2017-05-02 12:01:27 yushui',
-  item8: '170517',
+  item1:' ',
+  item2: '101050A1',
+  item3: 'A级,橙色,本地,多头',
+  item4: '8',
+  item5: '7',
+  item6: '2.00',
+  item7: '未知',
+  item8: '2017-05-02 12:01:27 yushui',
+  item9: '170517',
 }];
 
 export default class index extends React.Component {
   state = {
-    activeId: '1'
+    activeId: '1',
+    visible: false
   }
   onTabChange = (id) => {
     this.setState({
       activeId: id
+    });
+  }
+  showModal = () => {
+    this.setState({
+      visible: true,
+    });
+  }
+  handleOk = (e) => {
+    console.log(e);
+    this.setState({
+      visible: false,
+    });
+  }
+  handleCancel = (e) => {
+    console.log(e);
+    this.setState({
+      visible: false,
     });
   }
   render(){
@@ -71,7 +91,20 @@ export default class index extends React.Component {
                 <Tabs activeId={this.state.activeId} onTabChange={this.onTabChange} >
                   <TabPanel tab="全部" id="1" >
                     <div className="mb10">
-                      <Button type="primary" >扫码入库</Button>
+                      <Button type="primary" onClick={this.showModal} >扫码入库</Button>
+                      <Modal
+                        title="扫码入库"
+                        visible={this.state.visible}
+                        onOk={this.handleOk}
+                        onCancel={this.handleCancel}
+                        footer={null}
+                      >
+                      <div>
+                        <PageBForm />
+                      </div>
+
+                      </Modal>
+
                       <Button style={{marginLeft:"6px"}}>批量导入</Button>
                       <span style={{float:"right", marginTop:"10px"}}>
                           商品数：11  入库总数：8888  入库总额：12.00

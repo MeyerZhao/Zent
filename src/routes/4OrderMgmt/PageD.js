@@ -19,7 +19,7 @@ const columns = [{
   title: '下单时间', dataIndex: 'item9', key: 'item9', }, {
   title: '操作', key: 'action', render: (text, record) => (
     <span>
-      <a href="">详情</a>
+      <Link to="/ordermgmtd/ordermgmtdsuba">退款详情</Link>
       <span className="ant-divider" />
       <a href="">备注</a>
     </span>
@@ -28,23 +28,7 @@ const columns = [{
 
 const data = [{
   key: '1',
-  item1: '/ordermgmtd/ordermgmtdsuba',
-  item2: 'John Brown',
-  item3: 'John Brown',
-  item4: 'John Brown',
-  item5: 'John Brown',
-  item6: 'John Brown',
-}, {
-  key: '2',
-  item1: 'John Brown',
-  item2: 'John Brown',
-  item3: 'John Brown',
-  item4: 'John Brown',
-  item5: 'John Brown',
-  item6: 'John Brown',
-}, {
-  key: '3',
-  item1: 'John Brown',
+  item1: '',
   item2: 'John Brown',
   item3: 'John Brown',
   item4: 'John Brown',
