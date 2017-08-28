@@ -136,7 +136,7 @@ const WrappedRegistrationForm = Form.create()(RegistrationForm);
 class index extends React.Component {
   render(){
     return (
-      <div style={{padding:"20px 30px"}}>
+      <div >
 
         <div className="mb20">
           <h3 className="block-title mb20">白条还款</h3>

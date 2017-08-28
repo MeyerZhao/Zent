@@ -14,7 +14,6 @@ const FormItem = Form.Item;
 class RegistrationForm extends React.Component {
   state = {
     value1: '1张',
-    value2: '外卖订单',
     confirmDirty: false,
     autoCompleteResult: [],
   };
@@ -22,12 +21,6 @@ class RegistrationForm extends React.Component {
     console.log('radio1 checked', e.target.value);
     this.setState({
       value1: e.target.value,
-    });
-  }
-  onChange2 = (e) => {
-    console.log('radio2 checked', e.target.value);
-    this.setState({
-      value2: e.target.value,
     });
   }
   handleSubmit = (e) => {

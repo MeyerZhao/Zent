@@ -81,7 +81,7 @@ class index extends React.Component {
 
               <br/>
 
-              <FormItem  >
+              <FormItem style={{marginBottom:"10px"}}>
                 <Select
                    mode="tags"
                    placeholder="客户标签"
@@ -110,7 +110,7 @@ class index extends React.Component {
                   changeOnSelect
                 />
               </FormItem>
-
+              <br/>
               <FormItem >
                 <Button type="primary" >搜索</Button> <Button style={{ marginLeft: 6 }}>重置</Button>
               </FormItem>

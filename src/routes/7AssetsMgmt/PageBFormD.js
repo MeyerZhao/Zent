@@ -1,6 +1,5 @@
 import React from 'react';
 import { Table } from 'antd';
-import { Link } from 'react-router';
 
 const columns = [{
   title: '用户注册手机', dataIndex: 'item1', key: 'item1', render: text => <a href="">{text}</a>, }, {
@@ -46,7 +45,7 @@ const data = [{
 class index extends React.Component {
   render(){
     return (
-        <div style={{padding:"20px 30px"}}>
+        <div >
           <div className="mb10">
             <span style={{textAlign:"right", marginTop:"10px"}}>
               当前白条开通用户：18  白条总额：1000,000.00元   应收金额：20,000.00元

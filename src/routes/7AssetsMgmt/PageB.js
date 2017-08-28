@@ -54,7 +54,7 @@ const data = [{
 class index extends React.Component {
   render(){
     return (
-        <div style={{padding:"20px 30px"}}>
+        <div >
           <div className="mb10">
           	<Link to="/assetsmgmtb/assetsmgmtbforma"><Button type="primary" >新建白条账户</Button></Link>
             <span className="table-infor">

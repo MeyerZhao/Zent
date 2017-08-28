@@ -94,26 +94,25 @@ class index extends React.Component {
     const { rangeValue } = this.state;
     return (
       <div>
-        <div style={{background:"#f8f8f8", padding:"10px"}} className="mb20"  >
-          <Row gutter={16}>      
-            <Col span={6} >
-              <div className="panel">
+        <div style={{background:"#f8f8f8", padding:"10px"}} className="mb10 searchbg"  >
+          <Row gutter={48}>      
+            <Col span={8} >
+              <div className="panel" style={{position:"relative"}}>
                 <div>店铺可用余额（元）</div>
                 <b>0.00</b>
-                <div >
+                <div style={{position:"absolute", left:"160px", top:"38px"}} >
                   <Link to="/assetsmgmta/assetsmgmtasuba"><Button type="primary" style={{marginRight:"4px"}} ghost>充值</Button></Link>
                   <Link to="/assetsmgmta/assetsmgmtasubb"><Button type="primary" style={{marginRight:"4px"}}>提现</Button></Link>
-                  <Link to="/assetsmgmta/assetsmgmtasubc">提现记录</Link>
                 </div>
               </div>
             </Col>
-            <Col span={6} >
+            <Col span={8} >
               <div className="panel">
                 <div>待结算金额（元）</div>
                 <b>0.00</b>
               </div>
             </Col>
-            <Col span={6} >
+            <Col span={8} >
               <div className="panel">
                 <div>不可用金额（元）</div>
                 <b>0.00</b>
@@ -123,7 +122,7 @@ class index extends React.Component {
           </Row>
         </div>
 
-        <div style={{padding:"0 20px 20px"}}>
+        <div >
           <Tabs activeId={this.state.activeId} onTabChange={this.onTabChange} >
             <TabPanel tab="收支明细" id="1">
                 <div className="mb20 mt20">
