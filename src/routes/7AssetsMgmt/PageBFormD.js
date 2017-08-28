@@ -12,13 +12,7 @@ const columns = [{
   title: '操作人', dataIndex: 'item7', key: 'item7', }, {
   title: '备注', key: 'action', render: (text, record) => (
     <span>
-      <Link to="/assetsmgmtb/assetsmgmtbform">编辑</Link>
-      <span className="ant-divider" />
-      <Link to="/assetsmgmtb/assetsmgmtbforma">还款</Link>
-      <span className="ant-divider" />
-      <Link to="/assetsmgmtb/assetsmgmtbformb">额度调整</Link>
-      <span className="ant-divider" />
-      <a href="">白条对账单</a>
+      <a href="">订单号码</a>
     </span>
   ),
 }];
@@ -54,7 +48,7 @@ class index extends React.Component {
     return (
         <div style={{padding:"20px 30px"}}>
           <div className="mb10">
-            <span style={{float:"right", marginTop:"10px"}}>
+            <span style={{textAlign:"right", marginTop:"10px"}}>
               当前白条开通用户：18  白条总额：1000,000.00元   应收金额：20,000.00元
             </span>
           </div>

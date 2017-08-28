@@ -1,8 +1,9 @@
 import React from 'react'
-import { Row, Col, Button, Table } from 'antd';
-import { Select } from 'antd';
+import { Link } from 'react-router';
+import { Row, Col, Button, Table, Select} from 'antd';
 import { DateRangePicker2 } from 'zent'
 import { Tabs } from 'zent';
+
 const TabPanel = Tabs.TabPanel;
 const Option = Select.Option;
 
@@ -100,8 +101,9 @@ class index extends React.Component {
                 <div>店铺可用余额（元）</div>
                 <b>0.00</b>
                 <div >
-                  <Button type="primary" style={{marginRight:"4px"}}>提现</Button>
-                  <Button type="primary" ghost>充值</Button>
+                  <Link to="/assetsmgmta/assetsmgmtasuba"><Button type="primary" style={{marginRight:"4px"}} ghost>充值</Button></Link>
+                  <Link to="/assetsmgmta/assetsmgmtasubb"><Button type="primary" style={{marginRight:"4px"}}>提现</Button></Link>
+                  <Link to="/assetsmgmta/assetsmgmtasubc">提现记录</Link>
                 </div>
               </div>
             </Col>

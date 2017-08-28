@@ -77,6 +77,10 @@ import CustomerMgmt from './routes/6CustomerMgmt/';
 // 7资产管理
 import AssetsMgmt from './routes/7AssetsMgmt/';
     import AssetsMgmtA from './routes/7AssetsMgmt/PageA';
+        import AssetsMgmtASubA from './routes/7AssetsMgmt/PageASubA';
+        import AssetsMgmtASubB from './routes/7AssetsMgmt/PageASubB';
+        import AssetsMgmtASubC from './routes/7AssetsMgmt/PageASubC';
+
     import AssetsMgmtB from './routes/7AssetsMgmt/PageB';
         import AssetsMgmtBFormA from './routes/7AssetsMgmt/PageBFormA';
         import AssetsMgmtBFormB from './routes/7AssetsMgmt/PageBFormB';
@@ -177,6 +181,9 @@ ReactDOM.render(
       <Route path="/assetsmgmt" component={AssetsMgmt}>
         <IndexRoute component={AssetsMgmtA}></IndexRoute>
         <Route path="/assetsmgmta" component={AssetsMgmtA} />
+            <Route path="/assetsmgmta/assetsmgmtasuba" component={AssetsMgmtASubA} />
+            <Route path="/assetsmgmta/assetsmgmtasubb" component={AssetsMgmtASubB} />
+            <Route path="/assetsmgmta/assetsmgmtasubc" component={AssetsMgmtASubC} />
         <Route path="/assetsmgmtb" component={AssetsMgmtB} />
             <Route path="/assetsmgmtb/assetsmgmtbforma" component={AssetsMgmtBFormA} />
             <Route path="/assetsmgmtb/assetsmgmtbformb" component={AssetsMgmtBFormB} />
